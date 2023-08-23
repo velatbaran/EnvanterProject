@@ -24,6 +24,18 @@ namespace EnvanterProject
         {
             txtToplamYapilacakIsSayisi.Text = Convert.ToString(db.YapilanCalismalar.Count());
             gridYapilanIsler.DataSource = db.YapilanCalismalar.OrderByDescending(a => a.Id).ToList();
+            if (gridYapilanIsler.Rows.Count > 0)
+            {
+                //gridYapilanIsler.Columns[0].Name = "Id";
+                gridYapilanIsler.Columns[0].Visible = false;
+                gridYapilanIsler.Columns[1].HeaderText = "Bölge Müdürlük";
+                gridYapilanIsler.Columns[2].HeaderText = "Şube";
+                gridYapilanIsler.Columns[3].HeaderText = "Yapılacak İş";
+                gridYapilanIsler.Columns[4].HeaderText = "Durum";
+                gridYapilanIsler.Columns[5].HeaderText = "İşi Yapan Personel";
+                gridYapilanIsler.Columns[6].HeaderText = "Kaydeden";
+                gridYapilanIsler.Columns[7].HeaderText = "Tarih";
+            }
             gridYapilanIsler.EnableHeadersVisualStyles = false;
             gridYapilanIsler.ColumnHeadersDefaultCellStyle.BackColor = Color.Beige;
             this.gridYapilanIsler.DefaultCellStyle.Font = new Font("Tahoma", 8);
@@ -43,19 +55,44 @@ namespace EnvanterProject
         {
             if (cmbSubeler.Text != "seçiniz..." && txtDurum.Text != "" && txtIsiYapan.Text != "" && txtYapılacakIs.Text != "")
             {
-                yapilanCalismalar.BolgeMudurluk = txtBolgeMudurluk.Text;
-                yapilanCalismalar.Sube = cmbSubeler.Text;
-                yapilanCalismalar.YapilacakIs = txtYapılacakIs.Text;
-                yapilanCalismalar.IsıYapanPersonel = txtIsiYapan.Text;
-                yapilanCalismalar.Durum = txtDurum.Text;
-                yapilanCalismalar.Kaydeden = SystemInformation.UserName;
-                yapilanCalismalar.Tarih = DateTime.Now;
-                db.YapilanCalismalar.Add(yapilanCalismalar);
-                db.SaveChanges();
-                Temizle();
-                Baslangic();
-                MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
-
+                if(txtYapilacakId.Text != "")
+                {
+                    int _id = Convert.ToInt32(txtYapilacakId.Text);
+                    if (db.YapilanCalismalar.Any(x => x.Id == _id))
+                    {
+                        MessageBox.Show("Bu yapılan iş zaten kayıtlı!");
+                    }
+                    else
+                    {
+                        yapilanCalismalar.BolgeMudurluk = txtBolgeMudurluk.Text;
+                        yapilanCalismalar.Sube = cmbSubeler.Text;
+                        yapilanCalismalar.YapilacakIs = txtYapılacakIs.Text;
+                        yapilanCalismalar.IsıYapanPersonel = txtIsiYapan.Text;
+                        yapilanCalismalar.Durum = txtDurum.Text;
+                        yapilanCalismalar.Kaydeden = SystemInformation.UserName;
+                        yapilanCalismalar.Tarih = DateTime.Now;
+                        db.YapilanCalismalar.Add(yapilanCalismalar);
+                        db.SaveChanges();
+                        Temizle();
+                        Baslangic();
+                        MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
+                    }
+                }
+                else
+                {
+                    yapilanCalismalar.BolgeMudurluk = txtBolgeMudurluk.Text;
+                    yapilanCalismalar.Sube = cmbSubeler.Text;
+                    yapilanCalismalar.YapilacakIs = txtYapılacakIs.Text;
+                    yapilanCalismalar.IsıYapanPersonel = txtIsiYapan.Text;
+                    yapilanCalismalar.Durum = txtDurum.Text;
+                    yapilanCalismalar.Kaydeden = SystemInformation.UserName;
+                    yapilanCalismalar.Tarih = DateTime.Now;
+                    db.YapilanCalismalar.Add(yapilanCalismalar);
+                    db.SaveChanges();
+                    Temizle();
+                    Baslangic();
+                    MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
+                }
             }
             else
             {
@@ -70,6 +107,7 @@ namespace EnvanterProject
 
         private void fYapilanCalisma_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'envanterDbDataSet1.YapilanCalismalar' table. You can move, or remove it, as needed.
             Baslangic();
         }
 
@@ -82,7 +120,6 @@ namespace EnvanterProject
                 {
                     if (cmbSubeler.Text != "seçiniz..." && txtDurum.Text != "" && txtIsiYapan.Text != "" && txtYapılacakIs.Text != "")
                     {
-
                         var guncelle = db.YapilanCalismalar.Where(x => x.Id == _id).SingleOrDefault();
                         guncelle.BolgeMudurluk = txtBolgeMudurluk.Text;
                         guncelle.Sube = cmbSubeler.Text;
@@ -146,12 +183,13 @@ namespace EnvanterProject
         {
             if (gridYapilanIsler.Rows.Count > 0)
             {
-                int yapilacakIsId = Convert.ToInt32(gridYapilanIsler.CurrentRow.Cells["Id"].Value.ToString());
-                string yapilacakIsAd = gridYapilanIsler.CurrentRow.Cells["YapilacakIs"].Value.ToString();
+                int seciliAlan = gridYapilanIsler.SelectedCells[0].RowIndex;
+                int _Id = Convert.ToInt32(gridYapilanIsler.Rows[seciliAlan].Cells[0].Value.ToString());
+                string yapilacakIsAd = gridYapilanIsler.Rows[seciliAlan].Cells[3].Value.ToString();
                 DialogResult onay = MessageBox.Show(yapilacakIsAd + " çalışmayı silmek istdeğinize emin misiniz?", "Yapılan Çalışmayı Silme İşlemi", MessageBoxButtons.YesNo);
                 if (onay == DialogResult.Yes)
                 {
-                    var yapilacakIs = db.YapilanCalismalar.Find(yapilacakIsId);
+                    var yapilacakIs = db.YapilanCalismalar.Find(_Id);
                     db.YapilanCalismalar.Remove(yapilacakIs);
                     db.SaveChanges();
                     MessageBox.Show("Yapılan çalışmayı silme işlemi başarılıyla gerçekleşti.");
@@ -188,7 +226,7 @@ namespace EnvanterProject
             if (txtIsArama.Text.Length > 1)
             {
                 string yapilanis = txtIsArama.Text;
-                gridYapilanIsler.DataSource = db.YapilanCalismalar.Where(a => a.Sube.Contains(yapilanis) || a.YapilacakIs.Contains(yapilanis) || a.IsıYapanPersonel.Contains(yapilanis)).ToList();
+                gridYapilanIsler.DataSource = db.YapilanCalismalar.Where(a => a.Sube.Contains(yapilanis) || a.YapilacakIs.Contains(yapilanis) || a.IsıYapanPersonel.Contains(yapilanis)).OrderByDescending(a => a.Id).ToList();
                 txtToplamYapilacakIsSayisi.Text = Convert.ToString(gridYapilanIsler.Rows.Count);
             }
             else
@@ -199,7 +237,27 @@ namespace EnvanterProject
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            DialogResult Cikis;
+            Cikis = MessageBox.Show("Ekran Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
+            if (Cikis == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        private void btnYapilacakIsGetir_Click_1(object sender, EventArgs e)
+        {
+            var tarih1 = dateTimePicker1.Value;
+            var tarih2 = dateTimePicker2.Value;
+            gridYapilanIsler.DataSource = db.YapilanCalismalar.Where(a => a.Tarih >= tarih1 && a.Tarih <= tarih2).OrderByDescending(a => a.Id).ToList();
+            txtToplamYapilacakIsSayisi.Text = Convert.ToString(gridYapilanIsler.Rows.Count);
+        }
+
+        private void btnYapilacakIsSifirla_Click_1(object sender, EventArgs e)
+        {
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
+            Baslangic();
         }
     }
 }

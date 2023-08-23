@@ -51,12 +51,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1BFDCF6CAE7846BF9754F8B289D0B5CE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_2BE986982DE496A6876D5BFB6937538C"
         "OwnerKey" = "8:_92B64C9DC77155591B9836705EEC664D"
         "MsmSig" = "8:_UNDEFINED"
@@ -125,6 +119,12 @@
         {
         "MsmKey" = "8:_3EB10D5478F5F33C4F2F1F1DB7FA1744"
         "OwnerKey" = "8:_98C97AB8A7E5F7BB565EA5054901586D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_40C206CE80EB4FBA8CA0D26815A825BC"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -231,12 +231,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_9810A87F08C54DC5B22EDCC06181C02D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_98C97AB8A7E5F7BB565EA5054901586D"
         "OwnerKey" = "8:_C8002E78CD4D4FEA8D77191B066AA38C"
         "MsmSig" = "8:_UNDEFINED"
@@ -251,6 +245,12 @@
         {
         "MsmKey" = "8:_9F78A5724CE4901C7AE098B28BFBCC68"
         "OwnerKey" = "8:_C8002E78CD4D4FEA8D77191B066AA38C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A36BFF1EF9414330AD7EECC47F20C445"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -285,12 +285,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_E533E15532C347E492D04EF92C1E3E7D"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_E58047F0329E2528CAD9D9CB9531060B"
         "OwnerKey" = "8:_C8002E78CD4D4FEA8D77191B066AA38C"
         "MsmSig" = "8:_UNDEFINED"
@@ -299,6 +293,12 @@
         {
         "MsmKey" = "8:_E58047F0329E2528CAD9D9CB9531060B"
         "OwnerKey" = "8:_8628C747BEFD3B1A4FA96DF6FBCCA293"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EBE9EBBB77AE4D5896DFFBFC6E7E881B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -621,26 +621,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1BFDCF6CAE7846BF9754F8B289D0B5CE"
-            {
-            "SourcePath" = "8:..\\EnvanterProject\\bin\\Debug\\rpGenelRapor.rdlc"
-            "TargetName" = "8:rpGenelRapor.rdlc"
-            "Tag" = "8:"
-            "Folder" = "8:_BB381AB6CDCA49B1A3D9146680E7C7CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2BE986982DE496A6876D5BFB6937538C"
             {
             "AssemblyRegister" = "3:1"
@@ -732,6 +712,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_40C206CE80EB4FBA8CA0D26815A825BC"
+            {
+            "SourcePath" = "8:..\\EnvanterProject\\rpGenelRapor.rdlc"
+            "TargetName" = "8:rpGenelRapor.rdlc"
+            "Tag" = "8:"
+            "Folder" = "8:_BB381AB6CDCA49B1A3D9146680E7C7CC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_44744D5F0BC24BA28932D8B20B225638"
@@ -971,26 +971,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9810A87F08C54DC5B22EDCC06181C02D"
-            {
-            "SourcePath" = "8:..\\EnvanterProject\\bin\\Debug\\EnvanterDb_log.ldf"
-            "TargetName" = "8:EnvanterDb_log.ldf"
-            "Tag" = "8:"
-            "Folder" = "8:_BB381AB6CDCA49B1A3D9146680E7C7CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_98C97AB8A7E5F7BB565EA5054901586D"
             {
             "AssemblyRegister" = "3:1"
@@ -1051,6 +1031,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A36BFF1EF9414330AD7EECC47F20C445"
+            {
+            "SourcePath" = "8:..\\EnvanterProject\\bin\\Debug\\EnvanterDb.mdf"
+            "TargetName" = "8:EnvanterDb.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_BB381AB6CDCA49B1A3D9146680E7C7CC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_C4F97410FC806D9407D978341E9A500F"
@@ -1135,26 +1135,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E533E15532C347E492D04EF92C1E3E7D"
-            {
-            "SourcePath" = "8:..\\EnvanterProject\\bin\\Debug\\EnvanterDb.mdf"
-            "TargetName" = "8:EnvanterDb.mdf"
-            "Tag" = "8:"
-            "Folder" = "8:_BB381AB6CDCA49B1A3D9146680E7C7CC"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E58047F0329E2528CAD9D9CB9531060B"
             {
             "AssemblyRegister" = "3:1"
@@ -1184,6 +1164,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EBE9EBBB77AE4D5896DFFBFC6E7E881B"
+            {
+            "SourcePath" = "8:..\\EnvanterProject\\bin\\Debug\\EnvanterDb_log.ldf"
+            "TargetName" = "8:EnvanterDb_log.ldf"
+            "Tag" = "8:"
+            "Folder" = "8:_BB381AB6CDCA49B1A3D9146680E7C7CC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F140CE71D9274696B5F22448DA3B8F49"
@@ -1305,7 +1305,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Envanter Programı"
         "ProductCode" = "8:{6F57041C-6232-4DC9-92DF-4497D060E9CD}"
-        "PackageCode" = "8:{C250FD30-EDC1-44CD-863E-D11D524A0963}"
+        "PackageCode" = "8:{C37B3055-F519-4EB6-9033-6805E8C0B986}"
         "UpgradeCode" = "8:{62F99D84-BE66-4BBC-891C-879749FCE9F1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

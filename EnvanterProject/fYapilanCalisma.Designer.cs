@@ -30,7 +30,9 @@ namespace EnvanterProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblHosgeldiniz = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnYapilacakIsSifirla = new System.Windows.Forms.Button();
@@ -46,6 +48,7 @@ namespace EnvanterProject
             this.txtYapilacakId = new System.Windows.Forms.TextBox();
             this.lblUrunId = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnKapat = new System.Windows.Forms.Button();
             this.txtIsArama = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBolgeMudurluk = new System.Windows.Forms.TextBox();
@@ -64,7 +67,6 @@ namespace EnvanterProject
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnKapat = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridYapilanIsler)).BeginInit();
@@ -114,7 +116,7 @@ namespace EnvanterProject
             this.btnYapilacakIsSifirla.TabIndex = 11;
             this.btnYapilacakIsSifirla.Text = "Sıfırla";
             this.btnYapilacakIsSifirla.UseVisualStyleBackColor = false;
-            this.btnYapilacakIsSifirla.Click += new System.EventHandler(this.btnYapilacakIsSifirla_Click);
+            this.btnYapilacakIsSifirla.Click += new System.EventHandler(this.btnYapilacakIsSifirla_Click_1);
             // 
             // btnYapilacakIsGetir
             // 
@@ -126,7 +128,7 @@ namespace EnvanterProject
             this.btnYapilacakIsGetir.TabIndex = 10;
             this.btnYapilacakIsGetir.Text = "Getir";
             this.btnYapilacakIsGetir.UseVisualStyleBackColor = true;
-            this.btnYapilacakIsGetir.Click += new System.EventHandler(this.btnYapilacakIsGetir_Click);
+            this.btnYapilacakIsGetir.Click += new System.EventHandler(this.btnYapilacakIsGetir_Click_1);
             // 
             // label20
             // 
@@ -180,7 +182,16 @@ namespace EnvanterProject
             // gridYapilanIsler
             // 
             this.gridYapilanIsler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridYapilanIsler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.gridYapilanIsler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridYapilanIsler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridYapilanIsler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridYapilanIsler.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -197,8 +208,10 @@ namespace EnvanterProject
             this.gridYapilanIsler.Location = new System.Drawing.Point(0, 0);
             this.gridYapilanIsler.Name = "gridYapilanIsler";
             this.gridYapilanIsler.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridYapilanIsler.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridYapilanIsler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridYapilanIsler.Size = new System.Drawing.Size(1263, 322);
+            this.gridYapilanIsler.Size = new System.Drawing.Size(1263, 376);
             this.gridYapilanIsler.TabIndex = 2;
             this.gridYapilanIsler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridYapilanIsler_CellContentClick);
             // 
@@ -230,7 +243,7 @@ namespace EnvanterProject
             this.lblUrunId.AutoSize = true;
             this.lblUrunId.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUrunId.ForeColor = System.Drawing.Color.White;
-            this.lblUrunId.Location = new System.Drawing.Point(557, 18);
+            this.lblUrunId.Location = new System.Drawing.Point(659, 14);
             this.lblUrunId.Name = "lblUrunId";
             this.lblUrunId.Size = new System.Drawing.Size(20, 14);
             this.lblUrunId.TabIndex = 24;
@@ -280,10 +293,23 @@ namespace EnvanterProject
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel2.Controls.Add(this.gridYapilanIsler);
-            this.splitContainer1.Size = new System.Drawing.Size(1263, 629);
+            this.splitContainer1.Size = new System.Drawing.Size(1263, 683);
             this.splitContainer1.SplitterDistance = 301;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.BackColor = System.Drawing.Color.Red;
+            this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKapat.ForeColor = System.Drawing.Color.White;
+            this.btnKapat.Location = new System.Drawing.Point(1234, 4);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(26, 23);
+            this.btnKapat.TabIndex = 35;
+            this.btnKapat.Text = "X";
+            this.btnKapat.UseVisualStyleBackColor = false;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // txtIsArama
             // 
@@ -433,6 +459,7 @@ namespace EnvanterProject
             this.cmbSubeler.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbSubeler.FormattingEnabled = true;
             this.cmbSubeler.Items.AddRange(new object[] {
+            "Bölge Müdürlüğü",
             "Personel Şube Müdürlüğü",
             "Destek Hizmetleri Şube Müdürlüğü",
             "Barajlar ve Hes Şube Müdürlüğü",
@@ -509,25 +536,12 @@ namespace EnvanterProject
             this.label1.TabIndex = 0;
             this.label1.Text = "Talep Eden Şube";
             // 
-            // btnKapat
-            // 
-            this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKapat.ForeColor = System.Drawing.Color.White;
-            this.btnKapat.Location = new System.Drawing.Point(1234, 4);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(26, 23);
-            this.btnKapat.TabIndex = 35;
-            this.btnKapat.Text = "X";
-            this.btnKapat.UseVisualStyleBackColor = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
             // fYapilanCalisma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1263, 629);
+            this.ClientSize = new System.Drawing.Size(1263, 683);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fYapilanCalisma";

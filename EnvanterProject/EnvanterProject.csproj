@@ -99,6 +99,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EnvanterDbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EnvanterDbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnvanterDbDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="fBaslangic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +235,17 @@
     </None>
     <None Include="EnvanterDbDataSet.xss">
       <DependentUpon>EnvanterDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EnvanterDbDataSet1.xsc">
+      <DependentUpon>EnvanterDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EnvanterDbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EnvanterDbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EnvanterDbDataSet1.xss">
+      <DependentUpon>EnvanterDbDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>

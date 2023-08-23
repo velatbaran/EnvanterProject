@@ -30,9 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnKapat = new System.Windows.Forms.Button();
             this.lblHosgeldiniz = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSifirla = new System.Windows.Forms.Button();
             this.btnGetir = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -83,8 +87,6 @@
             this.gridUrunler = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.urunlerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnKapat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,7 +95,6 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.urunlerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -150,6 +151,18 @@
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btnKapat
+            // 
+            this.btnKapat.BackColor = System.Drawing.Color.Red;
+            this.btnKapat.ForeColor = System.Drawing.Color.White;
+            this.btnKapat.Location = new System.Drawing.Point(1221, 3);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(32, 23);
+            this.btnKapat.TabIndex = 31;
+            this.btnKapat.Text = "X";
+            this.btnKapat.UseVisualStyleBackColor = false;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
             // lblHosgeldiniz
             // 
             this.lblHosgeldiniz.AutoSize = true;
@@ -163,6 +176,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Silver;
+            this.groupBox2.Controls.Add(this.btnSifirla);
             this.groupBox2.Controls.Add(this.btnGetir);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
@@ -176,13 +190,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tarih Aralığı";
             // 
+            // btnSifirla
+            // 
+            this.btnSifirla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSifirla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSifirla.ForeColor = System.Drawing.Color.White;
+            this.btnSifirla.Location = new System.Drawing.Point(233, 43);
+            this.btnSifirla.Name = "btnSifirla";
+            this.btnSifirla.Size = new System.Drawing.Size(69, 22);
+            this.btnSifirla.TabIndex = 36;
+            this.btnSifirla.Text = "Sıfırla";
+            this.btnSifirla.UseVisualStyleBackColor = false;
+            this.btnSifirla.Click += new System.EventHandler(this.btnSifirla_Click);
+            // 
             // btnGetir
             // 
             this.btnGetir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetir.ForeColor = System.Drawing.Color.White;
-            this.btnGetir.Location = new System.Drawing.Point(236, 22);
+            this.btnGetir.Location = new System.Drawing.Point(233, 19);
             this.btnGetir.Name = "btnGetir";
-            this.btnGetir.Size = new System.Drawing.Size(69, 41);
+            this.btnGetir.Size = new System.Drawing.Size(69, 22);
             this.btnGetir.TabIndex = 35;
             this.btnGetir.Text = "Getir";
             this.btnGetir.UseVisualStyleBackColor = true;
@@ -673,22 +700,33 @@
             // 
             this.gridUrunler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridUrunler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.gridUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridUrunler.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridUrunler.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gridUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridUrunler.ContextMenuStrip = this.contextMenuStrip1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridUrunler.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridUrunler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridUrunler.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.gridUrunler.GridColor = System.Drawing.SystemColors.ControlLight;
             this.gridUrunler.Location = new System.Drawing.Point(0, 0);
             this.gridUrunler.Name = "gridUrunler";
             this.gridUrunler.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gridUrunler.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.gridUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridUrunler.Size = new System.Drawing.Size(1256, 354);
             this.gridUrunler.TabIndex = 2;
             this.gridUrunler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridUrunler_CellContentClick);
@@ -706,22 +744,6 @@
             this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-            // 
-            // urunlerBindingSource
-            // 
-            this.urunlerBindingSource.DataSource = typeof(EnvanterProject.Urunler);
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.ForeColor = System.Drawing.Color.White;
-            this.btnKapat.Location = new System.Drawing.Point(1221, 3);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(32, 23);
-            this.btnKapat.TabIndex = 31;
-            this.btnKapat.Text = "X";
-            this.btnKapat.UseVisualStyleBackColor = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // fUrunEkle
             // 
@@ -747,7 +769,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.urunlerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -791,7 +812,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.DataGridView gridUrunler;
-        private System.Windows.Forms.BindingSource urunlerBindingSource;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtUruLokasyonAra;
@@ -809,6 +829,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtUrunAdAra;
         private System.Windows.Forms.Button btnKapat;
+        private System.Windows.Forms.Button btnSifirla;
     }
 }
 

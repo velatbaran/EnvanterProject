@@ -30,9 +30,24 @@ namespace EnvanterProject
         {
             txtUrunSayisi.Text = Convert.ToString(db.Urunler.Count());
             gridUrunler.DataSource = db.Urunler.OrderByDescending(a=>a.Id).ToList();
+            if (gridUrunler.Rows.Count > 0)
+            {
+                gridUrunler.Columns[0].Visible = false;
+                gridUrunler.Columns[1].HeaderText = "Kategori";
+                gridUrunler.Columns[2].HeaderText = "Ad";
+                gridUrunler.Columns[3].HeaderText = "Marka";
+                gridUrunler.Columns[4].HeaderText = "Model";
+                gridUrunler.Columns[5].HeaderText = "Seri No";
+                gridUrunler.Columns[6].HeaderText = "Açıklama";
+                gridUrunler.Columns[7].HeaderText = "Kullanıcı";
+                gridUrunler.Columns[8].HeaderText = "Lokasyon";
+                gridUrunler.Columns[9].HeaderText = "Kaydeden";
+                gridUrunler.Columns[10].HeaderText = "Tarih";
+            }
             gridUrunler.EnableHeadersVisualStyles = false;
             gridUrunler.ColumnHeadersDefaultCellStyle.BackColor = Color.GreenYellow;
             this.gridUrunler.DefaultCellStyle.Font = new Font("Tahoma", 8);
+            lblGirisYapan.Text = SystemInformation.UserName;
         }
 
         private void Temizle()
@@ -182,7 +197,7 @@ namespace EnvanterProject
             if (txtUrunKullaniciAra.Text.Length > 1)
             {
                 string urun = txtUrunKullaniciAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Kullanici.ToLower().Contains(urun.ToLower()) ).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Kullanici.ToLower().Contains(urun.ToLower()) ).OrderByDescending(a => a.Id).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -265,16 +280,17 @@ namespace EnvanterProject
         {
             var tarih1 = dateTimePicker1.Value;
             var tarih2 = dateTimePicker2.Value;
-            gridUrunler.DataSource = db.Urunler.Where(a => a.Tarih >= tarih1 && a.Tarih <= tarih2).ToList(); ;
-            txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count - 1);
+            gridUrunler.DataSource = db.Urunler.Where(a => a.Tarih >= tarih1 && a.Tarih <= tarih2).OrderByDescending(a => a.Id).ToList();
+            txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
         }
 
         private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (gridUrunler.Rows.Count > 0)
             {
-                int urunId = Convert.ToInt32(gridUrunler.CurrentRow.Cells["Id"].Value.ToString());
-                string urunAd = gridUrunler.CurrentRow.Cells["Ad"].Value.ToString();
+                int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
+                int urunId = Convert.ToInt32(gridUrunler.Rows[seciliAlan].Cells[0].Value.ToString());
+                string urunAd = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
                 DialogResult onay = MessageBox.Show(urunAd + " ürününü silmek istdeğinize emin misiniz?", "Ürün Silme İşlemi", MessageBoxButtons.YesNo);
                 if (onay == DialogResult.Yes)
                 {
@@ -290,6 +306,7 @@ namespace EnvanterProject
                 }
             }
         }
+        
         private void gridUrunler_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
@@ -313,10 +330,22 @@ namespace EnvanterProject
             txtLokasyon.Text = lokasyon;
             txtUrunId.Text = id;
         }
-
+       
         private void btnKapat_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            DialogResult Cikis;
+            Cikis = MessageBox.Show("Ekran Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
+            if (Cikis == DialogResult.Yes)
+            {
+                this.Hide();
+            }
+        }
+
+        private void btnSifirla_Click(object sender, EventArgs e)
+        {
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
+            Baslangic();
         }
     }
 }
