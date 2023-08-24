@@ -33,6 +33,7 @@ namespace EnvanterProject
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fYapilanCalisma));
             this.lblHosgeldiniz = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnYapilacakIsSifirla = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@ namespace EnvanterProject
             this.txtYapilacakId = new System.Windows.Forms.TextBox();
             this.lblUrunId = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnKapat = new System.Windows.Forms.Button();
             this.txtIsArama = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtBolgeMudurluk = new System.Windows.Forms.TextBox();
@@ -89,7 +89,7 @@ namespace EnvanterProject
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.groupBox2.BackColor = System.Drawing.Color.DimGray;
             this.groupBox2.Controls.Add(this.btnYapilacakIsSifirla);
             this.groupBox2.Controls.Add(this.btnYapilacakIsGetir);
             this.groupBox2.Controls.Add(this.label20);
@@ -98,9 +98,9 @@ namespace EnvanterProject
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(815, 16);
+            this.groupBox2.Location = new System.Drawing.Point(913, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(390, 76);
+            this.groupBox2.Size = new System.Drawing.Size(307, 167);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tarih Aralığı";
@@ -110,9 +110,9 @@ namespace EnvanterProject
             this.btnYapilacakIsSifirla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnYapilacakIsSifirla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsSifirla.ForeColor = System.Drawing.Color.White;
-            this.btnYapilacakIsSifirla.Location = new System.Drawing.Point(311, 22);
+            this.btnYapilacakIsSifirla.Location = new System.Drawing.Point(72, 112);
             this.btnYapilacakIsSifirla.Name = "btnYapilacakIsSifirla";
-            this.btnYapilacakIsSifirla.Size = new System.Drawing.Size(69, 38);
+            this.btnYapilacakIsSifirla.Size = new System.Drawing.Size(221, 32);
             this.btnYapilacakIsSifirla.TabIndex = 11;
             this.btnYapilacakIsSifirla.Text = "Sıfırla";
             this.btnYapilacakIsSifirla.UseVisualStyleBackColor = false;
@@ -122,9 +122,9 @@ namespace EnvanterProject
             // 
             this.btnYapilacakIsGetir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsGetir.ForeColor = System.Drawing.Color.White;
-            this.btnYapilacakIsGetir.Location = new System.Drawing.Point(236, 22);
+            this.btnYapilacakIsGetir.Location = new System.Drawing.Point(72, 75);
             this.btnYapilacakIsGetir.Name = "btnYapilacakIsGetir";
-            this.btnYapilacakIsGetir.Size = new System.Drawing.Size(69, 38);
+            this.btnYapilacakIsGetir.Size = new System.Drawing.Size(221, 32);
             this.btnYapilacakIsGetir.TabIndex = 10;
             this.btnYapilacakIsGetir.Text = "Getir";
             this.btnYapilacakIsGetir.UseVisualStyleBackColor = true;
@@ -134,7 +134,7 @@ namespace EnvanterProject
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(30, 46);
+            this.label20.Location = new System.Drawing.Point(30, 49);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(31, 14);
             this.label20.TabIndex = 34;
@@ -142,9 +142,9 @@ namespace EnvanterProject
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(61, 43);
+            this.dateTimePicker2.Location = new System.Drawing.Point(72, 46);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(169, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(221, 22);
             this.dateTimePicker2.TabIndex = 33;
             // 
             // label19
@@ -160,9 +160,9 @@ namespace EnvanterProject
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(61, 22);
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 22);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(169, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(221, 22);
             this.dateTimePicker1.TabIndex = 31;
             // 
             // contextMenuStrip1
@@ -183,7 +183,7 @@ namespace EnvanterProject
             // 
             this.gridYapilanIsler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridYapilanIsler.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.gridYapilanIsler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gridYapilanIsler.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -232,7 +232,7 @@ namespace EnvanterProject
             // 
             // txtYapilacakId
             // 
-            this.txtYapilacakId.Location = new System.Drawing.Point(702, 12);
+            this.txtYapilacakId.Location = new System.Drawing.Point(618, 12);
             this.txtYapilacakId.Name = "txtYapilacakId";
             this.txtYapilacakId.Size = new System.Drawing.Size(90, 20);
             this.txtYapilacakId.TabIndex = 25;
@@ -243,7 +243,7 @@ namespace EnvanterProject
             this.lblUrunId.AutoSize = true;
             this.lblUrunId.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUrunId.ForeColor = System.Drawing.Color.White;
-            this.lblUrunId.Location = new System.Drawing.Point(659, 14);
+            this.lblUrunId.Location = new System.Drawing.Point(575, 14);
             this.lblUrunId.Name = "lblUrunId";
             this.lblUrunId.Size = new System.Drawing.Size(20, 14);
             this.lblUrunId.TabIndex = 24;
@@ -261,8 +261,7 @@ namespace EnvanterProject
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Olive;
-            this.splitContainer1.Panel1.Controls.Add(this.btnKapat);
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.SeaGreen;
             this.splitContainer1.Panel1.Controls.Add(this.txtIsArama);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.txtBolgeMudurluk);
@@ -297,19 +296,6 @@ namespace EnvanterProject
             this.splitContainer1.SplitterDistance = 301;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKapat.ForeColor = System.Drawing.Color.White;
-            this.btnKapat.Location = new System.Drawing.Point(1234, 4);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(26, 23);
-            this.btnKapat.TabIndex = 35;
-            this.btnKapat.Text = "X";
-            this.btnKapat.UseVisualStyleBackColor = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // txtIsArama
             // 
@@ -543,9 +529,11 @@ namespace EnvanterProject
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1263, 683);
             this.Controls.Add(this.splitContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fYapilanCalisma";
             this.Text = "Yapılan Çalışmalar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fYapilanCalisma_FormClosing);
             this.Load += new System.EventHandler(this.fYapilanCalisma_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -595,6 +583,5 @@ namespace EnvanterProject
         private System.Windows.Forms.Button btnYapilacakIsSifirla;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIsArama;
-        private System.Windows.Forms.Button btnKapat;
     }
 }

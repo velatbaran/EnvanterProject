@@ -259,5 +259,19 @@ namespace EnvanterProject
             dateTimePicker2.Value = DateTime.Now;
             Baslangic();
         }
+
+        private void fYapilanCalisma_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult Cikis = MessageBox.Show("Ekrandan Çıkmak İstediğinizden Emin Misiniz?", "Çıkış Mesajı!", MessageBoxButtons.YesNo);
+            if (Cikis == DialogResult.Yes)
+            {
+                this.Hide();
+
+            }
+            else if (Cikis == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

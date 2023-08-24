@@ -32,7 +32,6 @@ namespace EnvanterProject
             this.lblKullanici = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnKapat = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCikis = new System.Windows.Forms.Button();
@@ -69,31 +68,17 @@ namespace EnvanterProject
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(178, 19);
+            this.label2.Location = new System.Drawing.Point(192, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(376, 99);
             this.label2.TabIndex = 34;
             this.label2.Text = "        Dsi 24.Bölge Müdürlüğü\r\n   Bilgi Teknolojileri Şube Müdürlüğü \r\n         " +
     "   Envanter Programı";
             // 
-            // btnKapat
-            // 
-            this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKapat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKapat.ForeColor = System.Drawing.Color.White;
-            this.btnKapat.Location = new System.Drawing.Point(739, 3);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(25, 23);
-            this.btnKapat.TabIndex = 35;
-            this.btnKapat.Text = "X";
-            this.btnKapat.UseVisualStyleBackColor = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::EnvanterProject.Properties.Resources.dsi;
-            this.pictureBox2.Location = new System.Drawing.Point(618, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(653, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 89);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +102,7 @@ namespace EnvanterProject
             this.btnCikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCikis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCikis.Image = global::EnvanterProject.Properties.Resources.exit;
-            this.btnCikis.Location = new System.Drawing.Point(474, 187);
+            this.btnCikis.Location = new System.Drawing.Point(486, 187);
             this.btnCikis.Name = "btnCikis";
             this.btnCikis.Size = new System.Drawing.Size(142, 86);
             this.btnCikis.TabIndex = 31;
@@ -134,7 +119,7 @@ namespace EnvanterProject
             this.btnCalismalar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCalismalar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnCalismalar.Image = global::EnvanterProject.Properties.Resources.goz241;
-            this.btnCalismalar.Location = new System.Drawing.Point(292, 187);
+            this.btnCalismalar.Location = new System.Drawing.Point(304, 187);
             this.btnCalismalar.Name = "btnCalismalar";
             this.btnCalismalar.Size = new System.Drawing.Size(167, 86);
             this.btnCalismalar.TabIndex = 29;
@@ -150,7 +135,7 @@ namespace EnvanterProject
             this.btnUrunSayfasiGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUrunSayfasiGiris.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUrunSayfasiGiris.Image = global::EnvanterProject.Properties.Resources.urungiris4854;
-            this.btnUrunSayfasiGiris.Location = new System.Drawing.Point(120, 187);
+            this.btnUrunSayfasiGiris.Location = new System.Drawing.Point(132, 187);
             this.btnUrunSayfasiGiris.Name = "btnUrunSayfasiGiris";
             this.btnUrunSayfasiGiris.Size = new System.Drawing.Size(154, 86);
             this.btnUrunSayfasiGiris.TabIndex = 27;
@@ -167,16 +152,16 @@ namespace EnvanterProject
             this.ClientSize = new System.Drawing.Size(765, 337);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCikis);
             this.Controls.Add(this.btnCalismalar);
             this.Controls.Add(this.btnUrunSayfasiGiris);
             this.Controls.Add(this.lblKullanici);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "fBaslangic";
             this.Text = "Başlangıç Sayfası";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fBaslangic_FormClosing);
             this.Load += new System.EventHandler(this.fBaslangic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -192,7 +177,6 @@ namespace EnvanterProject
         private System.Windows.Forms.Button btnUrunSayfasiGiris;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
     }

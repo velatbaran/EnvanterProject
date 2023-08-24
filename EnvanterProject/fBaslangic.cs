@@ -33,11 +33,10 @@ namespace EnvanterProject
 
         private void btnCikis_Click(object sender, EventArgs e)
         {
-            DialogResult Cikis;
-            Cikis = MessageBox.Show("Program Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
+            DialogResult Cikis = MessageBox.Show("Programdan Çıkmak İstediğinizden Emin Misiniz?", "Çıkış Mesajı!", MessageBoxButtons.YesNo);
             if (Cikis == DialogResult.Yes)
             {
-                Application.Exit();
+                Environment.Exit(0);
             }
         }
 
@@ -56,16 +55,20 @@ namespace EnvanterProject
 
         private void fBaslangic_Load(object sender, EventArgs e)
         {
-            lblKullanici.Text = SystemInformation.UserName; 
+            lblKullanici.Text = SystemInformation.UserName;
         }
 
-        private void btnKapat_Click(object sender, EventArgs e)
+        private void fBaslangic_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult Cikis;
-            Cikis = MessageBox.Show("Program Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
+            DialogResult Cikis = MessageBox.Show("Programdan Çıkmak İstediğinizden Emin Misiniz?", "Çıkış Mesajı!", MessageBoxButtons.YesNo);
             if (Cikis == DialogResult.Yes)
             {
-                Application.Exit();
+                Environment.Exit(0);
+
+            }
+            else if (Cikis == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }

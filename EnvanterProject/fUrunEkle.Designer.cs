@@ -32,8 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fUrunEkle));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btnKapat = new System.Windows.Forms.Button();
             this.lblHosgeldiniz = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSifirla = new System.Windows.Forms.Button();
@@ -109,7 +109,6 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.splitContainer1.Panel1.Controls.Add(this.btnKapat);
             this.splitContainer1.Panel1.Controls.Add(this.lblHosgeldiniz);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
@@ -150,18 +149,6 @@
             this.splitContainer1.SplitterDistance = 301;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.ForeColor = System.Drawing.Color.White;
-            this.btnKapat.Location = new System.Drawing.Point(1221, 3);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(32, 23);
-            this.btnKapat.TabIndex = 31;
-            this.btnKapat.Text = "X";
-            this.btnKapat.UseVisualStyleBackColor = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // lblHosgeldiniz
             // 
@@ -753,10 +740,12 @@
             this.ClientSize = new System.Drawing.Size(1256, 661);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fUrunEkle";
             this.Text = "Ürün Giriş Formu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fUrunEkle_FormClosing);
             this.Load += new System.EventHandler(this.fUrunEkle_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -828,7 +817,6 @@
         private System.Windows.Forms.TextBox txtUrunKullaniciAra;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtUrunAdAra;
-        private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.Button btnSifirla;
     }
 }
