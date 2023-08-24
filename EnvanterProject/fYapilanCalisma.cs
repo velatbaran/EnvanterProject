@@ -235,16 +235,6 @@ namespace EnvanterProject
             }
         }
 
-        private void btnKapat_Click(object sender, EventArgs e)
-        {
-            DialogResult Cikis;
-            Cikis = MessageBox.Show("Ekran Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
-            if (Cikis == DialogResult.Yes)
-            {
-                this.Hide();
-            }
-        }
-
         private void btnYapilacakIsGetir_Click_1(object sender, EventArgs e)
         {
             var tarih1 = dateTimePicker1.Value;

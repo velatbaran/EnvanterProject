@@ -330,16 +330,6 @@ namespace EnvanterProject
             txtLokasyon.Text = lokasyon;
             txtUrunId.Text = id;
         }
-       
-        private void btnKapat_Click(object sender, EventArgs e)
-        {
-            DialogResult Cikis;
-            Cikis = MessageBox.Show("Ekran Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
-            if (Cikis == DialogResult.Yes)
-            {
-                this.Hide();
-            }
-        }
 
         private void btnSifirla_Click(object sender, EventArgs e)
         {
