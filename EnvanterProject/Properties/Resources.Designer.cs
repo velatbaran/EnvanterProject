@@ -203,6 +203,16 @@ namespace EnvanterProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rapor48541 {
+            get {
+                object obj = ResourceManager.GetObject("rapor48541", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap restore4854 {
             get {
                 object obj = ResourceManager.GetObject("restore4854", resourceCulture);

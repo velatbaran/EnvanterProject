@@ -41,8 +41,8 @@ namespace EnvanterProject
                 gridUrunler.Columns[6].HeaderText = "Açıklama";
                 gridUrunler.Columns[7].HeaderText = "Kullanıcı";
                 gridUrunler.Columns[8].HeaderText = "Lokasyon";
-                gridUrunler.Columns[9].HeaderText = "Kaydeden";
-                gridUrunler.Columns[10].HeaderText = "Tarih";
+                gridUrunler.Columns[9].HeaderText = "Tarih";
+                gridUrunler.Columns[10].HeaderText = "Kaydeden";
             }
             gridUrunler.EnableHeadersVisualStyles = false;
             gridUrunler.ColumnHeadersDefaultCellStyle.BackColor = Color.GreenYellow;

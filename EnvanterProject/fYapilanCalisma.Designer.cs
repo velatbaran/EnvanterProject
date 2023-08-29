@@ -45,7 +45,6 @@ namespace EnvanterProject
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridYapilanIsler = new System.Windows.Forms.DataGridView();
-            this.btnYapilacakIsGuncelle = new System.Windows.Forms.Button();
             this.txtYapilacakId = new System.Windows.Forms.TextBox();
             this.lblUrunId = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -53,6 +52,7 @@ namespace EnvanterProject
             this.label4 = new System.Windows.Forms.Label();
             this.txtBolgeMudurluk = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnYapilacakIsGuncelle = new System.Windows.Forms.Button();
             this.btnYapilacakTemizle = new System.Windows.Forms.Button();
             this.lblKullanici = new System.Windows.Forms.Label();
             this.btnYapilacakIsExcelRapor = new System.Windows.Forms.Button();
@@ -100,7 +100,7 @@ namespace EnvanterProject
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(913, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(307, 167);
+            this.groupBox2.Size = new System.Drawing.Size(307, 152);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tarih Aralığı";
@@ -110,7 +110,7 @@ namespace EnvanterProject
             this.btnYapilacakIsSifirla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnYapilacakIsSifirla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsSifirla.ForeColor = System.Drawing.Color.White;
-            this.btnYapilacakIsSifirla.Location = new System.Drawing.Point(72, 112);
+            this.btnYapilacakIsSifirla.Location = new System.Drawing.Point(72, 111);
             this.btnYapilacakIsSifirla.Name = "btnYapilacakIsSifirla";
             this.btnYapilacakIsSifirla.Size = new System.Drawing.Size(221, 32);
             this.btnYapilacakIsSifirla.TabIndex = 11;
@@ -124,10 +124,11 @@ namespace EnvanterProject
             this.btnYapilacakIsGetir.ForeColor = System.Drawing.Color.White;
             this.btnYapilacakIsGetir.Location = new System.Drawing.Point(72, 75);
             this.btnYapilacakIsGetir.Name = "btnYapilacakIsGetir";
-            this.btnYapilacakIsGetir.Size = new System.Drawing.Size(221, 32);
+            this.btnYapilacakIsGetir.Size = new System.Drawing.Size(221, 29);
             this.btnYapilacakIsGetir.TabIndex = 10;
             this.btnYapilacakIsGetir.Text = "Getir";
-            this.btnYapilacakIsGetir.UseVisualStyleBackColor = true;
+            this.btnYapilacakIsGetir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnYapilacakIsGetir.UseVisualStyleBackColor = false;
             this.btnYapilacakIsGetir.Click += new System.EventHandler(this.btnYapilacakIsGetir_Click_1);
             // 
             // label20
@@ -214,21 +215,6 @@ namespace EnvanterProject
             this.gridYapilanIsler.Size = new System.Drawing.Size(1263, 376);
             this.gridYapilanIsler.TabIndex = 2;
             this.gridYapilanIsler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridYapilanIsler_CellContentClick);
-            // 
-            // btnYapilacakIsGuncelle
-            // 
-            this.btnYapilacakIsGuncelle.BackColor = System.Drawing.Color.Purple;
-            this.btnYapilacakIsGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYapilacakIsGuncelle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnYapilacakIsGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
-            this.btnYapilacakIsGuncelle.Location = new System.Drawing.Point(618, 110);
-            this.btnYapilacakIsGuncelle.Name = "btnYapilacakIsGuncelle";
-            this.btnYapilacakIsGuncelle.Size = new System.Drawing.Size(90, 57);
-            this.btnYapilacakIsGuncelle.TabIndex = 6;
-            this.btnYapilacakIsGuncelle.Text = "Güncelle";
-            this.btnYapilacakIsGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnYapilacakIsGuncelle.UseVisualStyleBackColor = false;
-            this.btnYapilacakIsGuncelle.Click += new System.EventHandler(this.btnYapilacakIsGuncelle_Click);
             // 
             // txtYapilacakId
             // 
@@ -338,6 +324,21 @@ namespace EnvanterProject
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 31;
             this.label8.Text = "Müdürlük";
+            // 
+            // btnYapilacakIsGuncelle
+            // 
+            this.btnYapilacakIsGuncelle.BackColor = System.Drawing.Color.Purple;
+            this.btnYapilacakIsGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYapilacakIsGuncelle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnYapilacakIsGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
+            this.btnYapilacakIsGuncelle.Location = new System.Drawing.Point(618, 110);
+            this.btnYapilacakIsGuncelle.Name = "btnYapilacakIsGuncelle";
+            this.btnYapilacakIsGuncelle.Size = new System.Drawing.Size(90, 57);
+            this.btnYapilacakIsGuncelle.TabIndex = 6;
+            this.btnYapilacakIsGuncelle.Text = "Güncelle";
+            this.btnYapilacakIsGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnYapilacakIsGuncelle.UseVisualStyleBackColor = false;
+            this.btnYapilacakIsGuncelle.Click += new System.EventHandler(this.btnYapilacakIsGuncelle_Click);
             // 
             // btnYapilacakTemizle
             // 
