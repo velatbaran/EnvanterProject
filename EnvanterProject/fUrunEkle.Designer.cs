@@ -83,6 +83,12 @@
             this.gridUrunler = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -174,6 +180,7 @@
             // btnSifirla
             // 
             this.btnSifirla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSifirla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSifirla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSifirla.ForeColor = System.Drawing.Color.White;
             this.btnSifirla.Location = new System.Drawing.Point(233, 43);
@@ -186,6 +193,7 @@
             // 
             // btnGetir
             // 
+            this.btnGetir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGetir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGetir.ForeColor = System.Drawing.Color.White;
             this.btnGetir.Location = new System.Drawing.Point(233, 19);
@@ -234,6 +242,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtUruLokasyonAra);
             this.groupBox1.Controls.Add(this.label17);
@@ -260,15 +274,15 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(25, 159);
+            this.label18.Location = new System.Drawing.Point(25, 166);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(73, 14);
+            this.label18.Size = new System.Drawing.Size(42, 14);
             this.label18.TabIndex = 25;
-            this.label18.Text = "Lokasyon :";
+            this.label18.Text = "Şube ";
             // 
             // txtUruLokasyonAra
             // 
-            this.txtUruLokasyonAra.Location = new System.Drawing.Point(105, 157);
+            this.txtUruLokasyonAra.Location = new System.Drawing.Point(111, 164);
             this.txtUruLokasyonAra.Name = "txtUruLokasyonAra";
             this.txtUruLokasyonAra.Size = new System.Drawing.Size(174, 22);
             this.txtUruLokasyonAra.TabIndex = 24;
@@ -280,13 +294,13 @@
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(25, 36);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 14);
+            this.label17.Size = new System.Drawing.Size(63, 14);
             this.label17.TabIndex = 23;
-            this.label17.Text = "Kategori :";
+            this.label17.Text = "Kategori ";
             // 
             // txtUrunKategoriAra
             // 
-            this.txtUrunKategoriAra.Location = new System.Drawing.Point(105, 33);
+            this.txtUrunKategoriAra.Location = new System.Drawing.Point(111, 33);
             this.txtUrunKategoriAra.Name = "txtUrunKategoriAra";
             this.txtUrunKategoriAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKategoriAra.TabIndex = 22;
@@ -296,15 +310,15 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(25, 137);
+            this.label15.Location = new System.Drawing.Point(25, 143);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(52, 14);
+            this.label15.Size = new System.Drawing.Size(48, 14);
             this.label15.TabIndex = 19;
-            this.label15.Text = "Model :";
+            this.label15.Text = "Model ";
             // 
             // txtUrunModelAra
             // 
-            this.txtUrunModelAra.Location = new System.Drawing.Point(105, 132);
+            this.txtUrunModelAra.Location = new System.Drawing.Point(111, 138);
             this.txtUrunModelAra.Name = "txtUrunModelAra";
             this.txtUrunModelAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunModelAra.TabIndex = 18;
@@ -314,15 +328,15 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(25, 111);
+            this.label14.Location = new System.Drawing.Point(25, 116);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 14);
+            this.label14.Size = new System.Drawing.Size(44, 14);
             this.label14.TabIndex = 17;
-            this.label14.Text = "Marka :";
+            this.label14.Text = "Marka";
             // 
             // txtUrunMarkaAra
             // 
-            this.txtUrunMarkaAra.Location = new System.Drawing.Point(105, 107);
+            this.txtUrunMarkaAra.Location = new System.Drawing.Point(111, 112);
             this.txtUrunMarkaAra.Name = "txtUrunMarkaAra";
             this.txtUrunMarkaAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunMarkaAra.TabIndex = 16;
@@ -332,15 +346,15 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(25, 87);
+            this.label13.Location = new System.Drawing.Point(25, 89);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 14);
+            this.label13.Size = new System.Drawing.Size(54, 14);
             this.label13.TabIndex = 15;
-            this.label13.Text = "Seri No :";
+            this.label13.Text = "Seri No ";
             // 
             // txtUrunSeriNoAra
             // 
-            this.txtUrunSeriNoAra.Location = new System.Drawing.Point(105, 84);
+            this.txtUrunSeriNoAra.Location = new System.Drawing.Point(111, 86);
             this.txtUrunSeriNoAra.Name = "txtUrunSeriNoAra";
             this.txtUrunSeriNoAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunSeriNoAra.TabIndex = 14;
@@ -350,7 +364,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(25, 129);
+            this.label12.Location = new System.Drawing.Point(25, 130);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(0, 14);
             this.label12.TabIndex = 13;
@@ -359,15 +373,15 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(25, 62);
+            this.label11.Location = new System.Drawing.Point(25, 63);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(64, 14);
+            this.label11.Size = new System.Drawing.Size(60, 14);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Kullanıcı :";
+            this.label11.Text = "Kullanıcı ";
             // 
             // txtUrunKullaniciAra
             // 
-            this.txtUrunKullaniciAra.Location = new System.Drawing.Point(105, 59);
+            this.txtUrunKullaniciAra.Location = new System.Drawing.Point(111, 60);
             this.txtUrunKullaniciAra.Name = "txtUrunKullaniciAra";
             this.txtUrunKullaniciAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKullaniciAra.TabIndex = 11;
@@ -376,6 +390,7 @@
             // btnGuncelle
             // 
             this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
@@ -410,6 +425,7 @@
             // btnIptal
             // 
             this.btnIptal.BackColor = System.Drawing.Color.DimGray;
+            this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIptal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIptal.Image = global::EnvanterProject.Properties.Resources.clear4848;
@@ -456,6 +472,7 @@
             // btnKategoriEkle
             // 
             this.btnKategoriEkle.BackColor = System.Drawing.Color.DarkGray;
+            this.btnKategoriEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKategoriEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnKategoriEkle.Image = global::EnvanterProject.Properties.Resources.Ekle24;
             this.btnKategoriEkle.Location = new System.Drawing.Point(343, 51);
@@ -469,6 +486,7 @@
             // btnExcelRapor
             // 
             this.btnExcelRapor.BackColor = System.Drawing.Color.Green;
+            this.btnExcelRapor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExcelRapor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcelRapor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExcelRapor.Image = global::EnvanterProject.Properties.Resources.backup4854;
@@ -504,6 +522,7 @@
             // btnUrunKaydet
             // 
             this.btnUrunKaydet.BackColor = System.Drawing.Color.LightGreen;
+            this.btnUrunKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUrunKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUrunKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUrunKaydet.Image = global::EnvanterProject.Properties.Resources.Ekle24;
@@ -582,7 +601,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(463, 52);
+            this.label6.Location = new System.Drawing.Point(463, 53);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 14);
@@ -594,7 +613,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(47, 152);
+            this.label5.Location = new System.Drawing.Point(49, 154);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 14);
@@ -606,7 +625,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(48, 122);
+            this.label4.Location = new System.Drawing.Point(50, 124);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 14);
@@ -618,7 +637,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(47, 92);
+            this.label3.Location = new System.Drawing.Point(49, 94);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 14);
@@ -630,7 +649,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(47, 60);
+            this.label1.Location = new System.Drawing.Point(49, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 14);
@@ -651,6 +670,7 @@
             this.gridUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridUrunler.ContextMenuStrip = this.contextMenuStrip1;
+            this.gridUrunler.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -685,6 +705,66 @@
             this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(88, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 14);
+            this.label2.TabIndex = 26;
+            this.label2.Text = ":";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(88, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(11, 14);
+            this.label8.TabIndex = 27;
+            this.label8.Text = ":";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(88, 89);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(11, 14);
+            this.label16.TabIndex = 28;
+            this.label16.Text = ":";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(88, 116);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(11, 14);
+            this.label21.TabIndex = 31;
+            this.label21.Text = ":";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(88, 143);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(11, 14);
+            this.label22.TabIndex = 31;
+            this.label22.Text = ":";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(89, 167);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(11, 14);
+            this.label23.TabIndex = 31;
+            this.label23.Text = ":";
             // 
             // fUrunEkle
             // 
@@ -768,6 +848,12 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtUrunKullaniciAra;
         private System.Windows.Forms.Button btnSifirla;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label16;
     }
 }
 

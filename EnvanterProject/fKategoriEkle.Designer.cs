@@ -67,6 +67,7 @@ namespace EnvanterProject
             // btnSil
             // 
             this.btnSil.BackColor = System.Drawing.Color.Red;
+            this.btnSil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSil.Image = global::EnvanterProject.Properties.Resources.cancel24;
             this.btnSil.Location = new System.Drawing.Point(220, 245);
@@ -81,6 +82,7 @@ namespace EnvanterProject
             // btnKategoriKaydet
             // 
             this.btnKategoriKaydet.BackColor = System.Drawing.Color.Green;
+            this.btnKategoriKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKategoriKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnKategoriKaydet.Image = global::EnvanterProject.Properties.Resources.save24;
             this.btnKategoriKaydet.Location = new System.Drawing.Point(86, 245);

@@ -98,6 +98,7 @@ namespace EnvanterProject
             // btnCikis
             // 
             this.btnCikis.BackColor = System.Drawing.Color.Red;
+            this.btnCikis.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCikis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCikis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCikis.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -115,6 +116,7 @@ namespace EnvanterProject
             // 
             this.btnCalismalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnCalismalar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCalismalar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCalismalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalismalar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCalismalar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -131,6 +133,7 @@ namespace EnvanterProject
             // btnUrunSayfasiGiris
             // 
             this.btnUrunSayfasiGiris.BackColor = System.Drawing.Color.Olive;
+            this.btnUrunSayfasiGiris.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUrunSayfasiGiris.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUrunSayfasiGiris.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUrunSayfasiGiris.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

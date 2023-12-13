@@ -108,6 +108,7 @@ namespace EnvanterProject
             // btnYapilacakIsSifirla
             // 
             this.btnYapilacakIsSifirla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnYapilacakIsSifirla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsSifirla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsSifirla.ForeColor = System.Drawing.Color.White;
             this.btnYapilacakIsSifirla.Location = new System.Drawing.Point(72, 111);
@@ -120,6 +121,7 @@ namespace EnvanterProject
             // 
             // btnYapilacakIsGetir
             // 
+            this.btnYapilacakIsGetir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsGetir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsGetir.ForeColor = System.Drawing.Color.White;
             this.btnYapilacakIsGetir.Location = new System.Drawing.Point(72, 75);
@@ -328,6 +330,7 @@ namespace EnvanterProject
             // btnYapilacakIsGuncelle
             // 
             this.btnYapilacakIsGuncelle.BackColor = System.Drawing.Color.Purple;
+            this.btnYapilacakIsGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsGuncelle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnYapilacakIsGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
@@ -343,6 +346,7 @@ namespace EnvanterProject
             // btnYapilacakTemizle
             // 
             this.btnYapilacakTemizle.BackColor = System.Drawing.Color.DimGray;
+            this.btnYapilacakTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakTemizle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnYapilacakTemizle.Image = global::EnvanterProject.Properties.Resources.clear4848;
@@ -369,6 +373,7 @@ namespace EnvanterProject
             // btnYapilacakIsExcelRapor
             // 
             this.btnYapilacakIsExcelRapor.BackColor = System.Drawing.Color.Green;
+            this.btnYapilacakIsExcelRapor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsExcelRapor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsExcelRapor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnYapilacakIsExcelRapor.Image = global::EnvanterProject.Properties.Resources.backup4854;
@@ -404,6 +409,7 @@ namespace EnvanterProject
             // btnYapilacakIsEkle
             // 
             this.btnYapilacakIsEkle.BackColor = System.Drawing.Color.Blue;
+            this.btnYapilacakIsEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnYapilacakIsEkle.Image = global::EnvanterProject.Properties.Resources.Ekle24;
