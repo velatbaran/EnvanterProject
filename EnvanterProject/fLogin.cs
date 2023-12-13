@@ -22,7 +22,7 @@ namespace EnvanterProject
             if (txtKullaniciAdi.Text != "" && txtSifre.Text != "")
             {
 
-                using (var db = new EnvanterDbEntities1())
+                using (var db = new EnvanterDbEntities())
                 {
                     try
                     {

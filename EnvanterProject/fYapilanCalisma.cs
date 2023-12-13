@@ -12,7 +12,7 @@ namespace EnvanterProject
 {
     public partial class fYapilanCalisma : Form
     {
-        private EnvanterDbEntities1 db = new EnvanterDbEntities1();
+        private EnvanterDbEntities db = new EnvanterDbEntities();
         private YapilanCalismalar yapilanCalismalar = new YapilanCalismalar();
 
         public fYapilanCalisma()

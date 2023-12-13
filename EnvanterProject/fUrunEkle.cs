@@ -12,8 +12,10 @@ namespace EnvanterProject
 {
     public partial class fUrunEkle : Form
     {
-        private EnvanterDbEntities1 db = new EnvanterDbEntities1();
+        private EnvanterDbEntities db = new EnvanterDbEntities();
         private Urunler urunler = new Urunler();
+        
+
         public fUrunEkle()
         {
             InitializeComponent();
@@ -23,26 +25,29 @@ namespace EnvanterProject
         {
             cmbKategori.DisplayMember = "Ad";
             cmbKategori.ValueMember = "Id";
-            cmbKategori.DataSource = db.Kategoriler.OrderByDescending(a => a.Id).ToList();
+            var result = db.Kategoriler.OrderByDescending(a => a.Id).ToList();
+            cmbKategori.DataSource = result;
         }
 
         private void Baslangic()
         {
+            db.Configuration.LazyLoadingEnabled = false;
             txtUrunSayisi.Text = Convert.ToString(db.Urunler.Count());
-            gridUrunler.DataSource = db.Urunler.OrderByDescending(a=>a.Id).ToList();
+            var result = db.Urunler.OrderByDescending(x => x.Id).ToList();
+            gridUrunler.DataSource = db.Urunler.OrderByDescending(x => x.Id).ToList(); 
             if (gridUrunler.Rows.Count > 0)
             {
                 gridUrunler.Columns[0].Visible = false;
                 gridUrunler.Columns[1].HeaderText = "Kategori";
-                gridUrunler.Columns[2].HeaderText = "Ad";
-                gridUrunler.Columns[3].HeaderText = "Marka";
-                gridUrunler.Columns[4].HeaderText = "Model";
-                gridUrunler.Columns[5].HeaderText = "Seri No";
-                gridUrunler.Columns[6].HeaderText = "Açıklama";
-                gridUrunler.Columns[7].HeaderText = "Kullanıcı";
-                gridUrunler.Columns[8].HeaderText = "Lokasyon";
-                gridUrunler.Columns[9].HeaderText = "Tarih";
-                gridUrunler.Columns[10].HeaderText = "Kaydeden";
+               // gridUrunler.Columns[2].HeaderText = "Ad";
+                gridUrunler.Columns[2].HeaderText = "Marka";
+                gridUrunler.Columns[3].HeaderText = "Model";
+                gridUrunler.Columns[4].HeaderText = "Seri No";
+                gridUrunler.Columns[5].HeaderText = "Açıklama";
+                gridUrunler.Columns[6].HeaderText = "Kullanıcı";
+                gridUrunler.Columns[7].HeaderText = "Şube";
+                gridUrunler.Columns[8].HeaderText = "Tarih";
+                gridUrunler.Columns[9].HeaderText = "Kaydeden";
             }
             gridUrunler.EnableHeadersVisualStyles = false;
             gridUrunler.ColumnHeadersDefaultCellStyle.BackColor = Color.GreenYellow;
@@ -52,19 +57,19 @@ namespace EnvanterProject
 
         private void Temizle()
         {
-            txtAd.Clear();
+           
             txtMarka.Clear();
             txtModel.Clear();
             txtSeriNo.Clear();
             txtKullanici.Clear();
-            txtLokasyon.Clear();
+            txtSube.Clear();
             txtAciklama.Clear();
-            txtAd.Focus();
             txtUrunId.Clear();
+            txtMarka.Focus();
         }
         private void btnUrunKaydet_Click(object sender, EventArgs e)
         {
-            if (cmbKategori.Text != "" && txtAd.Text != "" && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && txtKullanici.Text != "" && txtLokasyon.Text != "")
+            if (cmbKategori.Text != "" && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && txtKullanici.Text != "" && txtSube.Text != "")
             {
                 if (db.Urunler.Any(x => x.SeriNo == txtSeriNo.Text))
                 {
@@ -73,12 +78,12 @@ namespace EnvanterProject
                 else
                 {
                     urunler.Kategori = cmbKategori.Text;
-                    urunler.Ad = txtAd.Text;
+               //     urunler.Ad = txtAd.Text;
                     urunler.Marka = txtMarka.Text;
                     urunler.Model = txtModel.Text;
                     urunler.SeriNo = txtSeriNo.Text;
                     urunler.Kullanici = txtKullanici.Text;
-                    urunler.Lokasyon = txtLokasyon.Text;
+                    urunler.Sube = txtSube.Text;
                     urunler.Aciklama = txtAciklama.Text;
                     urunler.Kaydeden = SystemInformation.UserName;
                     urunler.Tarih = DateTime.Now;
@@ -92,23 +97,13 @@ namespace EnvanterProject
             else
             {
                 MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!");
-                txtAd.Focus();
+                txtMarka.Focus();
             }
         }
 
         private void txtUrunAra_TextChanged(object sender, EventArgs e)
         {
-            if (txtUrunAdAra.Text.Length > 1)
-            {
-                string urun = txtUrunAdAra.Text;
-                //gridUrunler.DataSource = db.Urunler.Where(a => a.Ad.Contains(urun) || a.Kategori.Contains(urun) || a.Marka.Contains(urun) || a.SeriNo.Contains(urun) || a.Model.Contains(urun) || a.Kullanici.Contains(urun) || a.Lokasyon.Contains(urun)).ToList();
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Ad.Contains(urun)).ToList();
-                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
-            }
-            else
-            {
-                Baslangic();
-            }
+            
         }
 
         private void btnIptal_Click(object sender, EventArgs e)
@@ -136,7 +131,7 @@ namespace EnvanterProject
                 int _id = Convert.ToInt32(txtUrunId.Text);
                 if (db.Urunler.Any(x => x.Id == _id))
                 {
-                    if (cmbKategori.Text != "" && txtAd.Text != "" && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && txtKullanici.Text != "" && txtLokasyon.Text != "")
+                    if (cmbKategori.Text != "" && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && txtKullanici.Text != "" && txtSube.Text != "")
                     {
                         if (db.Urunler.Any(x => x.SeriNo == txtSeriNo.Text && x.Id != _id))
                         {
@@ -146,12 +141,12 @@ namespace EnvanterProject
                         {
                             var guncelle = db.Urunler.Where(x => x.Id == _id).SingleOrDefault();
                             guncelle.Kategori = cmbKategori.Text;
-                            guncelle.Ad = txtAd.Text;
+                          //  guncelle.Ad = txtAd.Text;
                             guncelle.Marka = txtMarka.Text;
                             guncelle.Model = txtModel.Text;
                             guncelle.SeriNo = txtSeriNo.Text;
                             guncelle.Kullanici = txtKullanici.Text;
-                            guncelle.Lokasyon = txtLokasyon.Text;
+                            guncelle.Sube = txtSube.Text;
                             guncelle.Aciklama = txtAciklama.Text;
                             guncelle.Kaydeden = SystemInformation.UserName;
                             guncelle.Tarih = DateTime.Now;
@@ -164,7 +159,7 @@ namespace EnvanterProject
                     else
                     {
                         MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!");
-                        txtAd.Focus();
+                        txtMarka.Focus();
                     }
                 }
                 else
@@ -267,7 +262,7 @@ namespace EnvanterProject
             if (txtUruLokasyonAra.Text.Length > 1)
             {
                 string urun = txtUruLokasyonAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Lokasyon.ToLower().Contains(urun.ToLower())).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Sube.ToLower().Contains(urun.ToLower())).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -290,8 +285,8 @@ namespace EnvanterProject
             {
                 int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
                 int urunId = Convert.ToInt32(gridUrunler.Rows[seciliAlan].Cells[0].Value.ToString());
-                string urunAd = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
-                DialogResult onay = MessageBox.Show(urunAd + " ürününü silmek istdeğinize emin misiniz?", "Ürün Silme İşlemi", MessageBoxButtons.YesNo);
+                string urunMarka = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
+                DialogResult onay = MessageBox.Show(urunMarka + " ürününü silmek istdeğinize emin misiniz?", "Ürün Silme İşlemi", MessageBoxButtons.YesNo);
                 if (onay == DialogResult.Yes)
                 {
                     var urun = db.Urunler.Find(urunId);
@@ -312,22 +307,21 @@ namespace EnvanterProject
             int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
             string id = gridUrunler.Rows[seciliAlan].Cells[0].Value.ToString();
             string kategori = gridUrunler.Rows[seciliAlan].Cells[1].Value.ToString();
-            string ad = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
-            string marka = gridUrunler.Rows[seciliAlan].Cells[3].Value.ToString();
-            string model = gridUrunler.Rows[seciliAlan].Cells[4].Value.ToString();
-            string serino = gridUrunler.Rows[seciliAlan].Cells[5].Value.ToString();
-            string aciklama = gridUrunler.Rows[seciliAlan].Cells[6].Value.ToString();
-            string kullanici = gridUrunler.Rows[seciliAlan].Cells[7].Value.ToString();
-            string lokasyon = gridUrunler.Rows[seciliAlan].Cells[8].Value.ToString();
+           // string ad = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
+            string marka = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
+            string model = gridUrunler.Rows[seciliAlan].Cells[3].Value.ToString();
+            string serino = gridUrunler.Rows[seciliAlan].Cells[4].Value.ToString();
+            string aciklama = gridUrunler.Rows[seciliAlan].Cells[5].Value.ToString();
+            string kullanici = gridUrunler.Rows[seciliAlan].Cells[6].Value.ToString();
+            string lokasyon = gridUrunler.Rows[seciliAlan].Cells[7].Value.ToString();
 
             cmbKategori.Text = kategori;
-            txtAd.Text = ad;
             txtMarka.Text = marka;
             txtModel.Text = model;
             txtSeriNo.Text = serino;
             txtAciklama.Text = aciklama;
             txtKullanici.Text = kullanici;
-            txtLokasyon.Text = lokasyon;
+            txtSube.Text = lokasyon;
             txtUrunId.Text = id;
         }
 

@@ -27,7 +27,7 @@ namespace EnvanterProject
                     {
                         try
                         {
-                            using (var db = new EnvanterDbEntities1())
+                            using (var db = new EnvanterDbEntities())
                             {
                                 if (!db.Kullanicilar.Any(x => x.KullaniciAdi == txtKullaniciAdi.Text))
                                 {
@@ -73,7 +73,7 @@ namespace EnvanterProject
                         int _id = Convert.ToInt32(lblKullaniciId.Text);
                         try
                         {
-                            using (var db = new EnvanterDbEntities1())
+                            using (var db = new EnvanterDbEntities())
                             {
                                 if (db.Kullanicilar.Any(x => x.KullaniciAdi == txtKullaniciAdi.Text && x.Id != _id))
                                 {
@@ -130,7 +130,7 @@ namespace EnvanterProject
             if (gridKullanicilar.Rows.Count > 0)
             {
                 int id = Convert.ToInt32(gridKullanicilar.CurrentRow.Cells["Id"].Value.ToString());
-                using (var db = new EnvanterDbEntities1())
+                using (var db = new EnvanterDbEntities())
                 {
                     var kullanici = db.Kullanicilar.Where(x => x.Id == id).FirstOrDefault();
                     txtAdSoyad.Text = kullanici.AdSoyad;
@@ -146,7 +146,7 @@ namespace EnvanterProject
 
         private void fKullaniciEkle_Load(object sender, EventArgs e)
         {
-            using (var db = new EnvanterDbEntities1())
+            using (var db = new EnvanterDbEntities())
             {
                 gridKullanicilar.DataSource = db.Kullanicilar.Select(x => new { x.Id, x.AdSoyad, x.KullaniciAdi, x.Eposta }).ToList();
             }

@@ -12,7 +12,7 @@ namespace EnvanterProject
 {
     public partial class fKategoriEkle : Form
     {
-        private EnvanterDbEntities1 db = new EnvanterDbEntities1();
+        private EnvanterDbEntities db = new EnvanterDbEntities();
         private Kategoriler kategoriler = new Kategoriler();
         public fKategoriEkle()
         {

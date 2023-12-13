@@ -33,5 +33,15 @@ namespace EnvanterProject.Properties {
                 return ((string)(this["EnvanterDbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=B24VELATBARAN\\BT;Initial Catalog=EnvanterDb;Integrated Security=True")]
+        public string EnvanterDbConnectionString1 {
+            get {
+                return ((string)(this["EnvanterDbConnectionString1"]));
+            }
+        }
     }
 }

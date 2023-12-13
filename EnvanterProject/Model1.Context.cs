@@ -13,10 +13,10 @@ namespace EnvanterProject
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EnvanterDbEntities1 : DbContext
+    public partial class EnvanterDbEntities : DbContext
     {
-        public EnvanterDbEntities1()
-            : base("name=EnvanterDbEntities1")
+        public EnvanterDbEntities()
+            : base("name=EnvanterDbEntities")
         {
         }
     
@@ -25,9 +25,9 @@ namespace EnvanterProject
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Urunler> Urunler { get; set; }
         public virtual DbSet<Kategoriler> Kategoriler { get; set; }
         public virtual DbSet<Kullanicilar> Kullanicilar { get; set; }
+        public virtual DbSet<Urunler> Urunler { get; set; }
         public virtual DbSet<YapilanCalismalar> YapilanCalismalar { get; set; }
     }
 }

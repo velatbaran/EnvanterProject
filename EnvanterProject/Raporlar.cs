@@ -25,12 +25,12 @@ namespace EnvanterProject
                 {
                     Id = Convert.ToInt32(dgv.Rows[i].Cells["Id"].Value?.ToString()),
                     Kategori = dgv.Rows[i].Cells["Kategori"].Value?.ToString(),
-                    Ad = dgv.Rows[i].Cells["Ad"].Value?.ToString(),
+                //    Ad = dgv.Rows[i].Cells["Ad"].Value?.ToString(),
                     Marka = dgv.Rows[i].Cells["Marka"].Value?.ToString(),
                     Model = dgv.Rows[i].Cells["Model"].Value?.ToString(),
                     SeriNo = dgv.Rows[i].Cells["SeriNo"].Value?.ToString(),
                     Kullanici = dgv.Rows[i].Cells["Kullanici"].Value?.ToString(),
-                    Lokasyon = dgv.Rows[i].Cells["Lokasyon"].Value?.ToString(),
+                    Sube = dgv.Rows[i].Cells["Sube"].Value?.ToString(),
                     Aciklama = dgv.Rows[i].Cells["Aciklama"].Value?.ToString(),
                     Kaydeden = dgv.Rows[i].Cells["Kaydeden"].Value?.ToString(),
                     Tarih = Convert.ToDateTime(dgv.Rows[i].Cells["Tarih"].Value?.ToString())

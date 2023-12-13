@@ -56,8 +56,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtUrunKullaniciAra = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtUrunAdAra = new System.Windows.Forms.TextBox();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtUrunId = new System.Windows.Forms.TextBox();
             this.lblUrunId = new System.Windows.Forms.Label();
@@ -70,19 +68,17 @@
             this.txtUrunSayisi = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnUrunKaydet = new System.Windows.Forms.Button();
-            this.txtLokasyon = new System.Windows.Forms.TextBox();
+            this.txtSube = new System.Windows.Forms.TextBox();
             this.txtKullanici = new System.Windows.Forms.TextBox();
             this.txtSeriNo = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtMarka = new System.Windows.Forms.TextBox();
-            this.txtAd = new System.Windows.Forms.TextBox();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridUrunler = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -124,19 +120,17 @@
             this.splitContainer1.Panel1.Controls.Add(this.txtUrunSayisi);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.btnUrunKaydet);
-            this.splitContainer1.Panel1.Controls.Add(this.txtLokasyon);
+            this.splitContainer1.Panel1.Controls.Add(this.txtSube);
             this.splitContainer1.Panel1.Controls.Add(this.txtKullanici);
             this.splitContainer1.Panel1.Controls.Add(this.txtSeriNo);
             this.splitContainer1.Panel1.Controls.Add(this.txtModel);
             this.splitContainer1.Panel1.Controls.Add(this.txtMarka);
-            this.splitContainer1.Panel1.Controls.Add(this.txtAd);
             this.splitContainer1.Panel1.Controls.Add(this.cmbKategori);
             this.splitContainer1.Panel1.Controls.Add(this.label7);
             this.splitContainer1.Panel1.Controls.Add(this.label6);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.Black;
@@ -253,8 +247,6 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtUrunKullaniciAra);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtUrunAdAra);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
             this.groupBox1.Location = new System.Drawing.Point(898, 15);
@@ -268,7 +260,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(25, 181);
+            this.label18.Location = new System.Drawing.Point(25, 159);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(73, 14);
             this.label18.TabIndex = 25;
@@ -276,7 +268,7 @@
             // 
             // txtUruLokasyonAra
             // 
-            this.txtUruLokasyonAra.Location = new System.Drawing.Point(105, 179);
+            this.txtUruLokasyonAra.Location = new System.Drawing.Point(105, 157);
             this.txtUruLokasyonAra.Name = "txtUruLokasyonAra";
             this.txtUruLokasyonAra.Size = new System.Drawing.Size(174, 22);
             this.txtUruLokasyonAra.TabIndex = 24;
@@ -304,7 +296,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(25, 159);
+            this.label15.Location = new System.Drawing.Point(25, 137);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(52, 14);
             this.label15.TabIndex = 19;
@@ -312,7 +304,7 @@
             // 
             // txtUrunModelAra
             // 
-            this.txtUrunModelAra.Location = new System.Drawing.Point(105, 154);
+            this.txtUrunModelAra.Location = new System.Drawing.Point(105, 132);
             this.txtUrunModelAra.Name = "txtUrunModelAra";
             this.txtUrunModelAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunModelAra.TabIndex = 18;
@@ -322,7 +314,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(25, 133);
+            this.label14.Location = new System.Drawing.Point(25, 111);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 14);
             this.label14.TabIndex = 17;
@@ -330,7 +322,7 @@
             // 
             // txtUrunMarkaAra
             // 
-            this.txtUrunMarkaAra.Location = new System.Drawing.Point(105, 129);
+            this.txtUrunMarkaAra.Location = new System.Drawing.Point(105, 107);
             this.txtUrunMarkaAra.Name = "txtUrunMarkaAra";
             this.txtUrunMarkaAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunMarkaAra.TabIndex = 16;
@@ -340,7 +332,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(25, 109);
+            this.label13.Location = new System.Drawing.Point(25, 87);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 14);
             this.label13.TabIndex = 15;
@@ -348,7 +340,7 @@
             // 
             // txtUrunSeriNoAra
             // 
-            this.txtUrunSeriNoAra.Location = new System.Drawing.Point(105, 106);
+            this.txtUrunSeriNoAra.Location = new System.Drawing.Point(105, 84);
             this.txtUrunSeriNoAra.Name = "txtUrunSeriNoAra";
             this.txtUrunSeriNoAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunSeriNoAra.TabIndex = 14;
@@ -367,7 +359,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(25, 84);
+            this.label11.Location = new System.Drawing.Point(25, 62);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 14);
             this.label11.TabIndex = 12;
@@ -375,29 +367,11 @@
             // 
             // txtUrunKullaniciAra
             // 
-            this.txtUrunKullaniciAra.Location = new System.Drawing.Point(105, 81);
+            this.txtUrunKullaniciAra.Location = new System.Drawing.Point(105, 59);
             this.txtUrunKullaniciAra.Name = "txtUrunKullaniciAra";
             this.txtUrunKullaniciAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKullaniciAra.TabIndex = 11;
             this.txtUrunKullaniciAra.TextChanged += new System.EventHandler(this.txtUrunKullaniciAra_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(25, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 14);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Ad :";
-            // 
-            // txtUrunAdAra
-            // 
-            this.txtUrunAdAra.Location = new System.Drawing.Point(105, 57);
-            this.txtUrunAdAra.Name = "txtUrunAdAra";
-            this.txtUrunAdAra.Size = new System.Drawing.Size(174, 22);
-            this.txtUrunAdAra.TabIndex = 9;
-            this.txtUrunAdAra.TextChanged += new System.EventHandler(this.txtUrunAra_TextChanged);
             // 
             // btnGuncelle
             // 
@@ -405,7 +379,7 @@
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
-            this.btnGuncelle.Location = new System.Drawing.Point(784, 76);
+            this.btnGuncelle.Location = new System.Drawing.Point(784, 84);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(90, 57);
             this.btnGuncelle.TabIndex = 26;
@@ -416,7 +390,7 @@
             // 
             // txtUrunId
             // 
-            this.txtUrunId.Location = new System.Drawing.Point(103, 200);
+            this.txtUrunId.Location = new System.Drawing.Point(103, 192);
             this.txtUrunId.Name = "txtUrunId";
             this.txtUrunId.Size = new System.Drawing.Size(90, 20);
             this.txtUrunId.TabIndex = 25;
@@ -426,7 +400,7 @@
             // 
             this.lblUrunId.AutoSize = true;
             this.lblUrunId.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblUrunId.Location = new System.Drawing.Point(48, 204);
+            this.lblUrunId.Location = new System.Drawing.Point(48, 196);
             this.lblUrunId.Name = "lblUrunId";
             this.lblUrunId.Size = new System.Drawing.Size(53, 14);
             this.lblUrunId.TabIndex = 24;
@@ -439,7 +413,7 @@
             this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIptal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIptal.Image = global::EnvanterProject.Properties.Resources.clear4848;
-            this.btnIptal.Location = new System.Drawing.Point(784, 139);
+            this.btnIptal.Location = new System.Drawing.Point(784, 147);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(90, 57);
             this.btnIptal.TabIndex = 23;
@@ -451,7 +425,7 @@
             // txtAciklama
             // 
             this.txtAciklama.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAciklama.Location = new System.Drawing.Point(542, 105);
+            this.txtAciklama.Location = new System.Drawing.Point(542, 111);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(236, 81);
@@ -462,7 +436,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(463, 110);
+            this.label10.Location = new System.Drawing.Point(463, 116);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 14);
@@ -484,7 +458,7 @@
             this.btnKategoriEkle.BackColor = System.Drawing.Color.DarkGray;
             this.btnKategoriEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnKategoriEkle.Image = global::EnvanterProject.Properties.Resources.Ekle24;
-            this.btnKategoriEkle.Location = new System.Drawing.Point(343, 33);
+            this.btnKategoriEkle.Location = new System.Drawing.Point(343, 51);
             this.btnKategoriEkle.Name = "btnKategoriEkle";
             this.btnKategoriEkle.Size = new System.Drawing.Size(40, 30);
             this.btnKategoriEkle.TabIndex = 20;
@@ -533,7 +507,7 @@
             this.btnUrunKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUrunKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnUrunKaydet.Image = global::EnvanterProject.Properties.Resources.Ekle24;
-            this.btnUrunKaydet.Location = new System.Drawing.Point(784, 15);
+            this.btnUrunKaydet.Location = new System.Drawing.Point(784, 23);
             this.btnUrunKaydet.Name = "btnUrunKaydet";
             this.btnUrunKaydet.Size = new System.Drawing.Size(90, 52);
             this.btnUrunKaydet.TabIndex = 8;
@@ -542,18 +516,18 @@
             this.btnUrunKaydet.UseVisualStyleBackColor = false;
             this.btnUrunKaydet.Click += new System.EventHandler(this.btnUrunKaydet_Click);
             // 
-            // txtLokasyon
+            // txtSube
             // 
-            this.txtLokasyon.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtLokasyon.Location = new System.Drawing.Point(542, 74);
-            this.txtLokasyon.Name = "txtLokasyon";
-            this.txtLokasyon.Size = new System.Drawing.Size(236, 20);
-            this.txtLokasyon.TabIndex = 7;
+            this.txtSube.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSube.Location = new System.Drawing.Point(542, 80);
+            this.txtSube.Name = "txtSube";
+            this.txtSube.Size = new System.Drawing.Size(236, 20);
+            this.txtSube.TabIndex = 7;
             // 
             // txtKullanici
             // 
             this.txtKullanici.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullanici.Location = new System.Drawing.Point(542, 47);
+            this.txtKullanici.Location = new System.Drawing.Point(542, 53);
             this.txtKullanici.Name = "txtKullanici";
             this.txtKullanici.Size = new System.Drawing.Size(236, 20);
             this.txtKullanici.TabIndex = 6;
@@ -561,7 +535,7 @@
             // txtSeriNo
             // 
             this.txtSeriNo.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSeriNo.Location = new System.Drawing.Point(128, 160);
+            this.txtSeriNo.Location = new System.Drawing.Point(128, 152);
             this.txtSeriNo.Name = "txtSeriNo";
             this.txtSeriNo.Size = new System.Drawing.Size(255, 20);
             this.txtSeriNo.TabIndex = 5;
@@ -569,7 +543,7 @@
             // txtModel
             // 
             this.txtModel.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtModel.Location = new System.Drawing.Point(129, 130);
+            this.txtModel.Location = new System.Drawing.Point(129, 122);
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(254, 20);
             this.txtModel.TabIndex = 4;
@@ -577,24 +551,16 @@
             // txtMarka
             // 
             this.txtMarka.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMarka.Location = new System.Drawing.Point(128, 100);
+            this.txtMarka.Location = new System.Drawing.Point(128, 92);
             this.txtMarka.Name = "txtMarka";
             this.txtMarka.Size = new System.Drawing.Size(255, 20);
             this.txtMarka.TabIndex = 3;
-            // 
-            // txtAd
-            // 
-            this.txtAd.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAd.Location = new System.Drawing.Point(128, 68);
-            this.txtAd.Name = "txtAd";
-            this.txtAd.Size = new System.Drawing.Size(255, 20);
-            this.txtAd.TabIndex = 2;
             // 
             // cmbKategori
             // 
             this.cmbKategori.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbKategori.FormattingEnabled = true;
-            this.cmbKategori.Location = new System.Drawing.Point(129, 40);
+            this.cmbKategori.Location = new System.Drawing.Point(129, 58);
             this.cmbKategori.Name = "cmbKategori";
             this.cmbKategori.Size = new System.Drawing.Size(208, 21);
             this.cmbKategori.TabIndex = 1;
@@ -604,19 +570,19 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(463, 76);
+            this.label7.Location = new System.Drawing.Point(463, 82);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 14);
+            this.label7.Size = new System.Drawing.Size(38, 14);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Lokasyon";
+            this.label7.Text = "Şube";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(463, 46);
+            this.label6.Location = new System.Drawing.Point(463, 52);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 14);
@@ -628,7 +594,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(47, 160);
+            this.label5.Location = new System.Drawing.Point(47, 152);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 14);
@@ -640,7 +606,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(48, 130);
+            this.label4.Location = new System.Drawing.Point(48, 122);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 14);
@@ -652,31 +618,19 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(47, 100);
+            this.label3.Location = new System.Drawing.Point(47, 92);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 14);
             this.label3.TabIndex = 2;
             this.label3.Text = "Marka";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(47, 71);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ad";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(47, 42);
+            this.label1.Location = new System.Drawing.Point(47, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 14);
@@ -770,15 +724,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUrunKaydet;
-        private System.Windows.Forms.TextBox txtLokasyon;
+        private System.Windows.Forms.TextBox txtSube;
         private System.Windows.Forms.TextBox txtKullanici;
         private System.Windows.Forms.TextBox txtSeriNo;
         private System.Windows.Forms.TextBox txtModel;
         private System.Windows.Forms.TextBox txtMarka;
-        private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Button btnExcelRapor;
         private System.Windows.Forms.TextBox txtUrunSayisi;
         private System.Windows.Forms.Label label9;
@@ -815,8 +767,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtUrunKullaniciAra;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtUrunAdAra;
         private System.Windows.Forms.Button btnSifirla;
     }
 }

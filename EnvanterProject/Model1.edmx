@@ -28,13 +28,12 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Kategori" Type="nvarchar" MaxLength="100" />
-          <Property Name="Ad" Type="nvarchar" MaxLength="100" />
           <Property Name="Marka" Type="nvarchar" MaxLength="100" />
           <Property Name="Model" Type="nvarchar" MaxLength="100" />
           <Property Name="SeriNo" Type="nvarchar" MaxLength="100" />
           <Property Name="Aciklama" Type="nvarchar(max)" />
           <Property Name="Kullanici" Type="nvarchar" MaxLength="100" />
-          <Property Name="Lokasyon" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sube" Type="nvarchar" MaxLength="100" />
           <Property Name="Tarih" Type="datetime" />
           <Property Name="Kaydeden" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -61,26 +60,10 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EnvanterDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Urunler">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Kategori" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Marka" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SeriNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Kullanici" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Lokasyon" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Tarih" Type="DateTime" Precision="3" />
-          <Property Name="Kaydeden" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="EnvanterDbEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Urunler" EntityType="Self.Urunler" />
+        <EntityContainer Name="EnvanterDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Kategoriler" EntityType="EnvanterDbModel.Kategoriler" />
           <EntitySet Name="Kullanicilar" EntityType="EnvanterDbModel.Kullanicilar" />
+          <EntitySet Name="Urunler" EntityType="EnvanterDbModel.Urunler" />
           <EntitySet Name="YapilanCalismalar" EntityType="EnvanterDbModel.YapilanCalismalar" />
         </EntityContainer>
         <EntityType Name="Kategoriler">
@@ -100,6 +83,21 @@
           <Property Name="Eposta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Sifre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Urunler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kategori" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Marka" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SeriNo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Kullanici" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Sube" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Kaydeden" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="YapilanCalismalar">
           <Key>
             <PropertyRef Name="Id" />
@@ -118,24 +116,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EnvanterDbModelStoreContainer" CdmEntityContainer="EnvanterDbEntities1">
-          <EntitySetMapping Name="Urunler">
-            <EntityTypeMapping TypeName="EnvanterDbModel.Urunler">
-              <MappingFragment StoreEntitySet="Urunler">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Kategori" ColumnName="Kategori" />
-                <ScalarProperty Name="Ad" ColumnName="Ad" />
-                <ScalarProperty Name="Marka" ColumnName="Marka" />
-                <ScalarProperty Name="Model" ColumnName="Model" />
-                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
-                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
-                <ScalarProperty Name="Kullanici" ColumnName="Kullanici" />
-                <ScalarProperty Name="Lokasyon" ColumnName="Lokasyon" />
-                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
-                <ScalarProperty Name="Kaydeden" ColumnName="Kaydeden" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="EnvanterDbModelStoreContainer" CdmEntityContainer="EnvanterDbEntities">
           <EntitySetMapping Name="Kategoriler">
             <EntityTypeMapping TypeName="EnvanterDbModel.Kategoriler">
               <MappingFragment StoreEntitySet="Kategoriler">
@@ -151,6 +132,22 @@
                 <ScalarProperty Name="Eposta" ColumnName="Eposta" />
                 <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
                 <ScalarProperty Name="AdSoyad" ColumnName="AdSoyad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Urunler">
+            <EntityTypeMapping TypeName="EnvanterDbModel.Urunler">
+              <MappingFragment StoreEntitySet="Urunler">
+                <ScalarProperty Name="Kaydeden" ColumnName="Kaydeden" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Sube" ColumnName="Sube" />
+                <ScalarProperty Name="Kullanici" ColumnName="Kullanici" />
+                <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+                <ScalarProperty Name="SeriNo" ColumnName="SeriNo" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Marka" ColumnName="Marka" />
+                <ScalarProperty Name="Kategori" ColumnName="Kategori" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
