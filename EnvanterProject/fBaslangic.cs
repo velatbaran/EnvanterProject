@@ -36,8 +36,9 @@ namespace EnvanterProject
             DialogResult Cikis = MessageBox.Show("Programdan Çıkmak İstediğinizden Emin Misiniz?", "Çıkış Mesajı!", MessageBoxButtons.YesNo);
             if (Cikis == DialogResult.Yes)
             {
-                Application.Exit();
+                Environment.Exit(0);
             }
+            
         }
 
         private void btnYedekleme_Click(object sender, EventArgs e)

@@ -29,6 +29,7 @@ namespace EnvanterProject
                     Marka = dgv.Rows[i].Cells["Marka"].Value?.ToString(),
                     Model = dgv.Rows[i].Cells["Model"].Value?.ToString(),
                     SeriNo = dgv.Rows[i].Cells["SeriNo"].Value?.ToString(),
+                    Ozellik = dgv.Rows[i].Cells["Ozellik"].Value?.ToString(),
                     Kullanici = dgv.Rows[i].Cells["Kullanici"].Value?.ToString(),
                     Sube = dgv.Rows[i].Cells["Sube"].Value?.ToString(),
                     Aciklama = dgv.Rows[i].Cells["Aciklama"].Value?.ToString(),

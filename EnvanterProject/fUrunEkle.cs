@@ -39,15 +39,15 @@ namespace EnvanterProject
             {
                 gridUrunler.Columns[0].Visible = false;
                 gridUrunler.Columns[1].HeaderText = "Kategori";
-               // gridUrunler.Columns[2].HeaderText = "Ad";
                 gridUrunler.Columns[2].HeaderText = "Marka";
                 gridUrunler.Columns[3].HeaderText = "Model";
                 gridUrunler.Columns[4].HeaderText = "Seri No";
-                gridUrunler.Columns[5].HeaderText = "Açıklama";
-                gridUrunler.Columns[6].HeaderText = "Kullanıcı";
-                gridUrunler.Columns[7].HeaderText = "Şube";
-                gridUrunler.Columns[8].HeaderText = "Tarih";
-                gridUrunler.Columns[9].HeaderText = "Kaydeden";
+                gridUrunler.Columns[5].HeaderText = "Özellik";
+                gridUrunler.Columns[6].HeaderText = "Açıklama";
+                gridUrunler.Columns[7].HeaderText = "Kullanıcı";
+                gridUrunler.Columns[8].HeaderText = "Şube";
+                gridUrunler.Columns[9].HeaderText = "Tarih";
+                gridUrunler.Columns[10].HeaderText = "Kaydeden";
             }
             gridUrunler.EnableHeadersVisualStyles = false;
             gridUrunler.ColumnHeadersDefaultCellStyle.BackColor = Color.GreenYellow;
@@ -65,6 +65,7 @@ namespace EnvanterProject
             txtSube.Clear();
             txtAciklama.Clear();
             txtUrunId.Clear();
+            txtOzellik.Clear();
             txtMarka.Focus();
         }
         private void btnUrunKaydet_Click(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace EnvanterProject
                 else
                 {
                     urunler.Kategori = cmbKategori.Text;
-               //     urunler.Ad = txtAd.Text;
+                    urunler.Ozellik = txtOzellik.Text;
                     urunler.Marka = txtMarka.Text;
                     urunler.Model = txtModel.Text;
                     urunler.SeriNo = txtSeriNo.Text;
@@ -141,10 +142,10 @@ namespace EnvanterProject
                         {
                             var guncelle = db.Urunler.Where(x => x.Id == _id).SingleOrDefault();
                             guncelle.Kategori = cmbKategori.Text;
-                          //  guncelle.Ad = txtAd.Text;
                             guncelle.Marka = txtMarka.Text;
                             guncelle.Model = txtModel.Text;
                             guncelle.SeriNo = txtSeriNo.Text;
+                            guncelle.Ozellik = txtOzellik.Text;
                             guncelle.Kullanici = txtKullanici.Text;
                             guncelle.Sube = txtSube.Text;
                             guncelle.Aciklama = txtAciklama.Text;
@@ -192,7 +193,7 @@ namespace EnvanterProject
             if (txtUrunKullaniciAra.Text.Length > 1)
             {
                 string urun = txtUrunKullaniciAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Kullanici.ToLower().Contains(urun.ToLower()) ).OrderByDescending(a => a.Id).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Kullanici.Contains(urun) ).OrderByDescending(a => a.Id).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -206,7 +207,7 @@ namespace EnvanterProject
             if (txtUrunKategoriAra.Text.Length > 1)
             {
                 string urun = txtUrunKategoriAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Kategori.ToLower().Contains(urun.ToLower())).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Kategori.Contains(urun)).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -220,7 +221,7 @@ namespace EnvanterProject
             if (txtUrunSeriNoAra.Text.Length > 1)
             {
                 string urun = txtUrunSeriNoAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.SeriNo.ToLower().Contains(urun.ToLower())).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.SeriNo.Contains(urun)).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -234,7 +235,7 @@ namespace EnvanterProject
             if (txtUrunMarkaAra.Text.Length > 1)
             {
                 string urun = txtUrunMarkaAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Marka.ToLower().Contains(urun.ToLower())).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Marka.Contains(urun)).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -248,7 +249,7 @@ namespace EnvanterProject
             if (txtUrunModelAra.Text.Length > 1)
             {
                 string urun = txtUrunModelAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Model.ToLower().Contains(urun.ToLower())).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Model.Contains(urun)).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -259,10 +260,10 @@ namespace EnvanterProject
 
         private void txtUruLokasyonAra_TextChanged(object sender, EventArgs e)
         {
-            if (txtUruLokasyonAra.Text.Length > 1)
+            if (txtUruSubeAra.Text.Length > 1)
             {
-                string urun = txtUruLokasyonAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Sube.ToLower().Contains(urun.ToLower())).ToList();
+                string urun = txtUruSubeAra.Text;
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Sube.Contains(urun)).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             else
@@ -307,13 +308,13 @@ namespace EnvanterProject
             int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
             string id = gridUrunler.Rows[seciliAlan].Cells[0].Value.ToString();
             string kategori = gridUrunler.Rows[seciliAlan].Cells[1].Value.ToString();
-           // string ad = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
             string marka = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
             string model = gridUrunler.Rows[seciliAlan].Cells[3].Value.ToString();
             string serino = gridUrunler.Rows[seciliAlan].Cells[4].Value.ToString();
-            string aciklama = gridUrunler.Rows[seciliAlan].Cells[5].Value.ToString();
-            string kullanici = gridUrunler.Rows[seciliAlan].Cells[6].Value.ToString();
-            string lokasyon = gridUrunler.Rows[seciliAlan].Cells[7].Value.ToString();
+            string ozellik = gridUrunler.Rows[seciliAlan].Cells[5].Value.ToString();
+            string aciklama = gridUrunler.Rows[seciliAlan].Cells[6].Value.ToString();
+            string kullanici = gridUrunler.Rows[seciliAlan].Cells[7].Value.ToString();
+            string sube = gridUrunler.Rows[seciliAlan].Cells[8].Value.ToString();
 
             cmbKategori.Text = kategori;
             txtMarka.Text = marka;
@@ -321,7 +322,8 @@ namespace EnvanterProject
             txtSeriNo.Text = serino;
             txtAciklama.Text = aciklama;
             txtKullanici.Text = kullanici;
-            txtSube.Text = lokasyon;
+            txtSube.Text = sube;
+            txtOzellik.Text = ozellik;
             txtUrunId.Text = id;
         }
 
@@ -343,6 +345,20 @@ namespace EnvanterProject
             else if (Cikis == DialogResult.No)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void txtUrunOzellikAra_TextChanged(object sender, EventArgs e)
+        {
+            if (txtUrunOzellikAra.Text.Length > 1)
+            {
+                string urun = txtUrunOzellikAra.Text;
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(urun)).ToList();
+                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
+            }
+            else
+            {
+                Baslangic();
             }
         }
     }

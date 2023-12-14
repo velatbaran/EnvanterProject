@@ -19,6 +19,7 @@ namespace EnvanterProject
         public string Marka { get; set; }
         public string Model { get; set; }
         public string SeriNo { get; set; }
+        public string Ozellik { get; set; }
         public string Aciklama { get; set; }
         public string Kullanici { get; set; }
         public string Sube { get; set; }
