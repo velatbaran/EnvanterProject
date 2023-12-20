@@ -340,7 +340,6 @@
             this.txtUrunOzellikAra.Name = "txtUrunOzellikAra";
             this.txtUrunOzellikAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunOzellikAra.TabIndex = 19;
-            this.txtUrunOzellikAra.TextChanged += new System.EventHandler(this.txtUrunOzellikAra_TextChanged);
             // 
             // label23
             // 
@@ -418,7 +417,6 @@
             this.txtUruSubeAra.Name = "txtUruSubeAra";
             this.txtUruSubeAra.Size = new System.Drawing.Size(174, 22);
             this.txtUruSubeAra.TabIndex = 18;
-            this.txtUruSubeAra.TextChanged += new System.EventHandler(this.txtUruLokasyonAra_TextChanged);
             // 
             // label17
             // 
@@ -436,7 +434,6 @@
             this.txtUrunKategoriAra.Name = "txtUrunKategoriAra";
             this.txtUrunKategoriAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKategoriAra.TabIndex = 13;
-            this.txtUrunKategoriAra.TextChanged += new System.EventHandler(this.txtUrunKategoriAra_TextChanged);
             // 
             // label15
             // 
@@ -454,7 +451,6 @@
             this.txtUrunModelAra.Name = "txtUrunModelAra";
             this.txtUrunModelAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunModelAra.TabIndex = 17;
-            this.txtUrunModelAra.TextChanged += new System.EventHandler(this.txtUrunModelAra_TextChanged);
             // 
             // label14
             // 
@@ -472,7 +468,6 @@
             this.txtUrunMarkaAra.Name = "txtUrunMarkaAra";
             this.txtUrunMarkaAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunMarkaAra.TabIndex = 16;
-            this.txtUrunMarkaAra.TextChanged += new System.EventHandler(this.txtUrunMarkaAra_TextChanged);
             // 
             // label13
             // 
@@ -490,7 +485,6 @@
             this.txtUrunSeriNoAra.Name = "txtUrunSeriNoAra";
             this.txtUrunSeriNoAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunSeriNoAra.TabIndex = 15;
-            this.txtUrunSeriNoAra.TextChanged += new System.EventHandler(this.txtUrunSeriNoAra_TextChanged);
             // 
             // label12
             // 
@@ -517,7 +511,6 @@
             this.txtUrunKullaniciAra.Name = "txtUrunKullaniciAra";
             this.txtUrunKullaniciAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKullaniciAra.TabIndex = 14;
-            this.txtUrunKullaniciAra.TextChanged += new System.EventHandler(this.txtUrunKullaniciAra_TextChanged);
             // 
             // txtUrunId
             // 
