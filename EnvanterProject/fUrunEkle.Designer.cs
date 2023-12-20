@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fUrunEkle));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cmbSube = new System.Windows.Forms.ComboBox();
             this.txtOzellik = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.lblHosgeldiniz = new System.Windows.Forms.Label();
@@ -67,19 +68,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtUrunKullaniciAra = new System.Windows.Forms.TextBox();
-            this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtUrunId = new System.Windows.Forms.TextBox();
             this.lblUrunId = new System.Windows.Forms.Label();
-            this.btnIptal = new System.Windows.Forms.Button();
             this.txtAciklama = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.lblGirisYapan = new System.Windows.Forms.Label();
-            this.btnKategoriEkle = new System.Windows.Forms.Button();
-            this.btnExcelRapor = new System.Windows.Forms.Button();
             this.txtUrunSayisi = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnUrunKaydet = new System.Windows.Forms.Button();
-            this.txtSube = new System.Windows.Forms.TextBox();
             this.txtKullanici = new System.Windows.Forms.TextBox();
             this.txtSeriNo = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
@@ -94,6 +89,14 @@
             this.gridUrunler = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.btnAramaTemizle = new System.Windows.Forms.Button();
+            this.btnGenelArama = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.btnIptal = new System.Windows.Forms.Button();
+            this.btnKategoriEkle = new System.Windows.Forms.Button();
+            this.btnExcelRapor = new System.Windows.Forms.Button();
+            this.btnUrunKaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -116,6 +119,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.splitContainer1.Panel1.Controls.Add(this.cmbSube);
             this.splitContainer1.Panel1.Controls.Add(this.txtOzellik);
             this.splitContainer1.Panel1.Controls.Add(this.label24);
             this.splitContainer1.Panel1.Controls.Add(this.lblHosgeldiniz);
@@ -133,7 +137,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.txtUrunSayisi);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
             this.splitContainer1.Panel1.Controls.Add(this.btnUrunKaydet);
-            this.splitContainer1.Panel1.Controls.Add(this.txtSube);
             this.splitContainer1.Panel1.Controls.Add(this.txtKullanici);
             this.splitContainer1.Panel1.Controls.Add(this.txtSeriNo);
             this.splitContainer1.Panel1.Controls.Add(this.txtModel);
@@ -152,10 +155,19 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel2.Controls.Add(this.gridUrunler);
-            this.splitContainer1.Size = new System.Drawing.Size(1256, 661);
+            this.splitContainer1.Size = new System.Drawing.Size(1248, 661);
             this.splitContainer1.SplitterDistance = 301;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // cmbSube
+            // 
+            this.cmbSube.FormattingEnabled = true;
+            this.cmbSube.Location = new System.Drawing.Point(577, 80);
+            this.cmbSube.Name = "cmbSube";
+            this.cmbSube.Size = new System.Drawing.Size(236, 21);
+            this.cmbSube.TabIndex = 32;
+            this.cmbSube.Text = "seçiniz...";
             // 
             // txtOzellik
             // 
@@ -197,9 +209,9 @@
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(934, 224);
+            this.groupBox2.Location = new System.Drawing.Point(934, 238);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(305, 72);
+            this.groupBox2.Size = new System.Drawing.Size(305, 62);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tarih Aralığı";
@@ -269,6 +281,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.btnAramaTemizle);
+            this.groupBox1.Controls.Add(this.btnGenelArama);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.txtUrunOzellikAra);
@@ -293,9 +307,9 @@
             this.groupBox1.Controls.Add(this.txtUrunKullaniciAra);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(932, 15);
+            this.groupBox1.Location = new System.Drawing.Point(932, 7);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 207);
+            this.groupBox1.Size = new System.Drawing.Size(307, 232);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Arama Seçenekleri";
@@ -304,7 +318,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(89, 178);
+            this.label25.Location = new System.Drawing.Point(89, 155);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(11, 14);
             this.label25.TabIndex = 34;
@@ -314,7 +328,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(26, 178);
+            this.label26.Location = new System.Drawing.Point(26, 155);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(45, 14);
             this.label26.TabIndex = 33;
@@ -322,7 +336,7 @@
             // 
             // txtUrunOzellikAra
             // 
-            this.txtUrunOzellikAra.Location = new System.Drawing.Point(111, 177);
+            this.txtUrunOzellikAra.Location = new System.Drawing.Point(111, 154);
             this.txtUrunOzellikAra.Name = "txtUrunOzellikAra";
             this.txtUrunOzellikAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunOzellikAra.TabIndex = 19;
@@ -332,7 +346,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(89, 154);
+            this.label23.Location = new System.Drawing.Point(89, 132);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(11, 14);
             this.label23.TabIndex = 31;
@@ -342,7 +356,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.Color.Black;
-            this.label22.Location = new System.Drawing.Point(88, 134);
+            this.label22.Location = new System.Drawing.Point(88, 113);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(11, 14);
             this.label22.TabIndex = 31;
@@ -352,7 +366,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(88, 109);
+            this.label21.Location = new System.Drawing.Point(88, 89);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(11, 14);
             this.label21.TabIndex = 31;
@@ -362,7 +376,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(88, 84);
+            this.label16.Location = new System.Drawing.Point(88, 65);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(11, 14);
             this.label16.TabIndex = 28;
@@ -372,7 +386,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(88, 61);
+            this.label8.Location = new System.Drawing.Point(88, 44);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(11, 14);
             this.label8.TabIndex = 27;
@@ -382,7 +396,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(88, 36);
+            this.label2.Location = new System.Drawing.Point(88, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(11, 14);
             this.label2.TabIndex = 26;
@@ -392,7 +406,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(26, 154);
+            this.label18.Location = new System.Drawing.Point(26, 132);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(42, 14);
             this.label18.TabIndex = 25;
@@ -400,7 +414,7 @@
             // 
             // txtUruSubeAra
             // 
-            this.txtUruSubeAra.Location = new System.Drawing.Point(111, 153);
+            this.txtUruSubeAra.Location = new System.Drawing.Point(111, 131);
             this.txtUruSubeAra.Name = "txtUruSubeAra";
             this.txtUruSubeAra.Size = new System.Drawing.Size(174, 22);
             this.txtUruSubeAra.TabIndex = 18;
@@ -410,7 +424,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(25, 36);
+            this.label17.Location = new System.Drawing.Point(25, 22);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(63, 14);
             this.label17.TabIndex = 23;
@@ -418,7 +432,7 @@
             // 
             // txtUrunKategoriAra
             // 
-            this.txtUrunKategoriAra.Location = new System.Drawing.Point(111, 33);
+            this.txtUrunKategoriAra.Location = new System.Drawing.Point(111, 19);
             this.txtUrunKategoriAra.Name = "txtUrunKategoriAra";
             this.txtUrunKategoriAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKategoriAra.TabIndex = 13;
@@ -428,7 +442,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(25, 134);
+            this.label15.Location = new System.Drawing.Point(25, 113);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 14);
             this.label15.TabIndex = 19;
@@ -436,7 +450,7 @@
             // 
             // txtUrunModelAra
             // 
-            this.txtUrunModelAra.Location = new System.Drawing.Point(111, 129);
+            this.txtUrunModelAra.Location = new System.Drawing.Point(111, 108);
             this.txtUrunModelAra.Name = "txtUrunModelAra";
             this.txtUrunModelAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunModelAra.TabIndex = 17;
@@ -446,7 +460,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(25, 109);
+            this.label14.Location = new System.Drawing.Point(25, 89);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(44, 14);
             this.label14.TabIndex = 17;
@@ -454,7 +468,7 @@
             // 
             // txtUrunMarkaAra
             // 
-            this.txtUrunMarkaAra.Location = new System.Drawing.Point(111, 105);
+            this.txtUrunMarkaAra.Location = new System.Drawing.Point(111, 85);
             this.txtUrunMarkaAra.Name = "txtUrunMarkaAra";
             this.txtUrunMarkaAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunMarkaAra.TabIndex = 16;
@@ -464,7 +478,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(25, 84);
+            this.label13.Location = new System.Drawing.Point(25, 65);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(54, 14);
             this.label13.TabIndex = 15;
@@ -472,7 +486,7 @@
             // 
             // txtUrunSeriNoAra
             // 
-            this.txtUrunSeriNoAra.Location = new System.Drawing.Point(111, 81);
+            this.txtUrunSeriNoAra.Location = new System.Drawing.Point(111, 62);
             this.txtUrunSeriNoAra.Name = "txtUrunSeriNoAra";
             this.txtUrunSeriNoAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunSeriNoAra.TabIndex = 15;
@@ -482,7 +496,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(25, 126);
+            this.label12.Location = new System.Drawing.Point(25, 121);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(0, 14);
             this.label12.TabIndex = 13;
@@ -491,7 +505,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(25, 60);
+            this.label11.Location = new System.Drawing.Point(25, 43);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 14);
             this.label11.TabIndex = 12;
@@ -499,27 +513,11 @@
             // 
             // txtUrunKullaniciAra
             // 
-            this.txtUrunKullaniciAra.Location = new System.Drawing.Point(111, 57);
+            this.txtUrunKullaniciAra.Location = new System.Drawing.Point(111, 40);
             this.txtUrunKullaniciAra.Name = "txtUrunKullaniciAra";
             this.txtUrunKullaniciAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKullaniciAra.TabIndex = 14;
             this.txtUrunKullaniciAra.TextChanged += new System.EventHandler(this.txtUrunKullaniciAra_TextChanged);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
-            this.btnGuncelle.Location = new System.Drawing.Point(822, 84);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(90, 57);
-            this.btnGuncelle.TabIndex = 10;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuncelle.UseVisualStyleBackColor = false;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // txtUrunId
             // 
@@ -540,26 +538,10 @@
             this.lblUrunId.Text = "Ürün Id";
             this.lblUrunId.Visible = false;
             // 
-            // btnIptal
-            // 
-            this.btnIptal.BackColor = System.Drawing.Color.DimGray;
-            this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIptal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIptal.Image = global::EnvanterProject.Properties.Resources.clear4848;
-            this.btnIptal.Location = new System.Drawing.Point(822, 147);
-            this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(90, 57);
-            this.btnIptal.TabIndex = 11;
-            this.btnIptal.Text = "Temizle";
-            this.btnIptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnIptal.UseVisualStyleBackColor = false;
-            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
-            // 
             // txtAciklama
             // 
             this.txtAciklama.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAciklama.Location = new System.Drawing.Point(571, 111);
+            this.txtAciklama.Location = new System.Drawing.Point(577, 113);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(236, 81);
@@ -587,36 +569,6 @@
             this.lblGirisYapan.TabIndex = 21;
             this.lblGirisYapan.Text = "kullanici";
             // 
-            // btnKategoriEkle
-            // 
-            this.btnKategoriEkle.BackColor = System.Drawing.Color.DarkGray;
-            this.btnKategoriEkle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKategoriEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKategoriEkle.Image = global::EnvanterProject.Properties.Resources.Ekle24;
-            this.btnKategoriEkle.Location = new System.Drawing.Point(406, 51);
-            this.btnKategoriEkle.Name = "btnKategoriEkle";
-            this.btnKategoriEkle.Size = new System.Drawing.Size(40, 30);
-            this.btnKategoriEkle.TabIndex = 20;
-            this.btnKategoriEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnKategoriEkle.UseVisualStyleBackColor = false;
-            this.btnKategoriEkle.Click += new System.EventHandler(this.btnKategoriEkle_Click);
-            // 
-            // btnExcelRapor
-            // 
-            this.btnExcelRapor.BackColor = System.Drawing.Color.Green;
-            this.btnExcelRapor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcelRapor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelRapor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExcelRapor.Image = global::EnvanterProject.Properties.Resources.backup4854;
-            this.btnExcelRapor.Location = new System.Drawing.Point(772, 238);
-            this.btnExcelRapor.Name = "btnExcelRapor";
-            this.btnExcelRapor.Size = new System.Drawing.Size(102, 63);
-            this.btnExcelRapor.TabIndex = 12;
-            this.btnExcelRapor.Text = "Rapor";
-            this.btnExcelRapor.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnExcelRapor.UseVisualStyleBackColor = false;
-            this.btnExcelRapor.Click += new System.EventHandler(this.btnExcelRapor_Click);
-            // 
             // txtUrunSayisi
             // 
             this.txtUrunSayisi.Location = new System.Drawing.Point(696, 281);
@@ -637,37 +589,13 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Toplam Ürün Sayısı";
             // 
-            // btnUrunKaydet
-            // 
-            this.btnUrunKaydet.BackColor = System.Drawing.Color.LightGreen;
-            this.btnUrunKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUrunKaydet.Image = global::EnvanterProject.Properties.Resources.Ekle24;
-            this.btnUrunKaydet.Location = new System.Drawing.Point(822, 23);
-            this.btnUrunKaydet.Name = "btnUrunKaydet";
-            this.btnUrunKaydet.Size = new System.Drawing.Size(90, 52);
-            this.btnUrunKaydet.TabIndex = 9;
-            this.btnUrunKaydet.Text = "Ekle";
-            this.btnUrunKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnUrunKaydet.UseVisualStyleBackColor = false;
-            this.btnUrunKaydet.Click += new System.EventHandler(this.btnUrunKaydet_Click);
-            // 
-            // txtSube
-            // 
-            this.txtSube.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSube.Location = new System.Drawing.Point(571, 80);
-            this.txtSube.Name = "txtSube";
-            this.txtSube.Size = new System.Drawing.Size(236, 20);
-            this.txtSube.TabIndex = 7;
-            // 
             // txtKullanici
             // 
             this.txtKullanici.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullanici.Location = new System.Drawing.Point(571, 53);
+            this.txtKullanici.Location = new System.Drawing.Point(577, 53);
             this.txtKullanici.Name = "txtKullanici";
             this.txtKullanici.Size = new System.Drawing.Size(236, 20);
-            this.txtKullanici.TabIndex = 6;
+            this.txtKullanici.TabIndex = 7;
             // 
             // txtSeriNo
             // 
@@ -701,6 +629,7 @@
             this.cmbKategori.Name = "cmbKategori";
             this.cmbKategori.Size = new System.Drawing.Size(208, 21);
             this.cmbKategori.TabIndex = 1;
+            this.cmbKategori.Text = "seçiniz...";
             // 
             // label7
             // 
@@ -806,7 +735,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.gridUrunler.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridUrunler.Size = new System.Drawing.Size(1256, 354);
+            this.gridUrunler.Size = new System.Drawing.Size(1248, 354);
             this.gridUrunler.TabIndex = 2;
             this.gridUrunler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridUrunler_CellContentClick);
             // 
@@ -824,12 +753,133 @@
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
+            // 
+            // btnAramaTemizle
+            // 
+            this.btnAramaTemizle.BackColor = System.Drawing.Color.Black;
+            this.btnAramaTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAramaTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAramaTemizle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAramaTemizle.ForeColor = System.Drawing.Color.White;
+            this.btnAramaTemizle.Image = global::EnvanterProject.Properties.Resources.clear4848;
+            this.btnAramaTemizle.Location = new System.Drawing.Point(111, 206);
+            this.btnAramaTemizle.Name = "btnAramaTemizle";
+            this.btnAramaTemizle.Size = new System.Drawing.Size(174, 27);
+            this.btnAramaTemizle.TabIndex = 36;
+            this.btnAramaTemizle.Text = "Temizle";
+            this.btnAramaTemizle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAramaTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAramaTemizle.UseVisualStyleBackColor = false;
+            this.btnAramaTemizle.Click += new System.EventHandler(this.btnAramaTemizle_Click);
+            // 
+            // btnGenelArama
+            // 
+            this.btnGenelArama.BackColor = System.Drawing.Color.Gray;
+            this.btnGenelArama.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenelArama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenelArama.ForeColor = System.Drawing.Color.White;
+            this.btnGenelArama.Image = global::EnvanterProject.Properties.Resources.ara2424;
+            this.btnGenelArama.Location = new System.Drawing.Point(111, 177);
+            this.btnGenelArama.Name = "btnGenelArama";
+            this.btnGenelArama.Size = new System.Drawing.Size(174, 27);
+            this.btnGenelArama.TabIndex = 35;
+            this.btnGenelArama.Text = "Ara";
+            this.btnGenelArama.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenelArama.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGenelArama.UseVisualStyleBackColor = false;
+            this.btnGenelArama.Click += new System.EventHandler(this.btnGenelArama_Click);
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
+            this.btnGuncelle.Location = new System.Drawing.Point(822, 84);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(90, 57);
+            this.btnGuncelle.TabIndex = 10;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.BackColor = System.Drawing.Color.DimGray;
+            this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIptal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIptal.Image = global::EnvanterProject.Properties.Resources.clear4848;
+            this.btnIptal.Location = new System.Drawing.Point(822, 147);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(90, 57);
+            this.btnIptal.TabIndex = 11;
+            this.btnIptal.Text = "Temizle";
+            this.btnIptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnIptal.UseVisualStyleBackColor = false;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
+            // 
+            // btnKategoriEkle
+            // 
+            this.btnKategoriEkle.BackColor = System.Drawing.Color.DarkGray;
+            this.btnKategoriEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKategoriEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnKategoriEkle.Image = global::EnvanterProject.Properties.Resources.Ekle24;
+            this.btnKategoriEkle.Location = new System.Drawing.Point(406, 51);
+            this.btnKategoriEkle.Name = "btnKategoriEkle";
+            this.btnKategoriEkle.Size = new System.Drawing.Size(40, 30);
+            this.btnKategoriEkle.TabIndex = 20;
+            this.btnKategoriEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnKategoriEkle.UseVisualStyleBackColor = false;
+            this.btnKategoriEkle.Click += new System.EventHandler(this.btnKategoriEkle_Click);
+            // 
+            // btnExcelRapor
+            // 
+            this.btnExcelRapor.BackColor = System.Drawing.Color.Green;
+            this.btnExcelRapor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcelRapor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelRapor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExcelRapor.Image = global::EnvanterProject.Properties.Resources.backup4854;
+            this.btnExcelRapor.Location = new System.Drawing.Point(772, 238);
+            this.btnExcelRapor.Name = "btnExcelRapor";
+            this.btnExcelRapor.Size = new System.Drawing.Size(102, 63);
+            this.btnExcelRapor.TabIndex = 12;
+            this.btnExcelRapor.Text = "Rapor";
+            this.btnExcelRapor.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnExcelRapor.UseVisualStyleBackColor = false;
+            this.btnExcelRapor.Click += new System.EventHandler(this.btnExcelRapor_Click);
+            // 
+            // btnUrunKaydet
+            // 
+            this.btnUrunKaydet.BackColor = System.Drawing.Color.LightGreen;
+            this.btnUrunKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUrunKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrunKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUrunKaydet.Image = global::EnvanterProject.Properties.Resources.Ekle24;
+            this.btnUrunKaydet.Location = new System.Drawing.Point(822, 23);
+            this.btnUrunKaydet.Name = "btnUrunKaydet";
+            this.btnUrunKaydet.Size = new System.Drawing.Size(90, 52);
+            this.btnUrunKaydet.TabIndex = 9;
+            this.btnUrunKaydet.Text = "Ekle";
+            this.btnUrunKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUrunKaydet.UseVisualStyleBackColor = false;
+            this.btnUrunKaydet.Click += new System.EventHandler(this.btnUrunKaydet_Click);
+            // 
             // fUrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1256, 661);
+            this.ClientSize = new System.Drawing.Size(1248, 661);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -864,7 +914,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnUrunKaydet;
-        private System.Windows.Forms.TextBox txtSube;
         private System.Windows.Forms.TextBox txtKullanici;
         private System.Windows.Forms.TextBox txtSeriNo;
         private System.Windows.Forms.TextBox txtModel;
@@ -917,6 +966,10 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtUrunOzellikAra;
+        private System.Windows.Forms.ComboBox cmbSube;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
+        private System.Windows.Forms.Button btnAramaTemizle;
+        private System.Windows.Forms.Button btnGenelArama;
     }
 }
 

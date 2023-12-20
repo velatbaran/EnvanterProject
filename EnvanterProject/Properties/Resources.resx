@@ -124,6 +124,9 @@
   <data name="restore4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restore4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="backup4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\backup4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tarım" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tarım.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,32 +145,32 @@
   <data name="cancel24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="settings4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shuffle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shuffle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="goz24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\goz24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="duzenle32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\duzenle32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="backup48541" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backup48541.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="rapor48541" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rapor48541.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="excel4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\excel4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="duzenle32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\duzenle32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="urungiris4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\urungiris4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Ekle24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ekle24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excel4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="rapor4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rapor4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,10 +181,10 @@
   <data name="clear4848" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear4848.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backup4854" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backup4854.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="rapor48541" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\rapor48541.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ara2424" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ara2424.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

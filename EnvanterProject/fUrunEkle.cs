@@ -14,7 +14,7 @@ namespace EnvanterProject
     {
         private EnvanterDbEntities db = new EnvanterDbEntities();
         private Urunler urunler = new Urunler();
-        
+
 
         public fUrunEkle()
         {
@@ -25,16 +25,21 @@ namespace EnvanterProject
         {
             cmbKategori.DisplayMember = "Ad";
             cmbKategori.ValueMember = "Id";
-            var result = db.Kategoriler.OrderByDescending(a => a.Id).ToList();
-            cmbKategori.DataSource = result;
+            cmbKategori.DataSource = db.Kategoriler.OrderByDescending(a => a.Id).ToList();
+        }
+        public void SubeDoldur()
+        {
+            cmbSube.DisplayMember = "Ad";
+            cmbSube.ValueMember = "Id";
+            cmbSube.DataSource = db.Subeler.ToList();
         }
 
         private void Baslangic()
         {
-            db.Configuration.LazyLoadingEnabled = false;
+            // db.Configuration.LazyLoadingEnabled = false;
             txtUrunSayisi.Text = Convert.ToString(db.Urunler.Count());
-            var result = db.Urunler.OrderByDescending(x => x.Id).ToList();
-            gridUrunler.DataSource = db.Urunler.OrderByDescending(x => x.Id).ToList(); 
+            //var result = db.Urunler.OrderByDescending(x => x.Id).ToList();
+            gridUrunler.DataSource = db.Urunler.OrderByDescending(x => x.Id).ToList();
             if (gridUrunler.Rows.Count > 0)
             {
                 gridUrunler.Columns[0].Visible = false;
@@ -57,12 +62,12 @@ namespace EnvanterProject
 
         private void Temizle()
         {
-           
+            cmbKategori.Text = "seçiniz...";
             txtMarka.Clear();
             txtModel.Clear();
             txtSeriNo.Clear();
             txtKullanici.Clear();
-            txtSube.Clear();
+            cmbSube.Text = "seçiniz...";
             txtAciklama.Clear();
             txtUrunId.Clear();
             txtOzellik.Clear();
@@ -70,7 +75,7 @@ namespace EnvanterProject
         }
         private void btnUrunKaydet_Click(object sender, EventArgs e)
         {
-            if (cmbKategori.Text != "" && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && txtKullanici.Text != "" && txtSube.Text != "")
+            if (cmbKategori.Text != "seçiniz..." && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && cmbSube.Text != "seçiniz..." && txtKullanici.Text != "")
             {
                 if (db.Urunler.Any(x => x.SeriNo == txtSeriNo.Text))
                 {
@@ -84,7 +89,7 @@ namespace EnvanterProject
                     urunler.Model = txtModel.Text;
                     urunler.SeriNo = txtSeriNo.Text;
                     urunler.Kullanici = txtKullanici.Text;
-                    urunler.Sube = txtSube.Text;
+                    urunler.Sube = cmbSube.Text;
                     urunler.Aciklama = txtAciklama.Text;
                     urunler.Kaydeden = SystemInformation.UserName;
                     urunler.Tarih = DateTime.Now;
@@ -104,7 +109,7 @@ namespace EnvanterProject
 
         private void txtUrunAra_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnIptal_Click(object sender, EventArgs e)
@@ -117,6 +122,9 @@ namespace EnvanterProject
             // TODO: This line of code loads data into the 'envanterDbDataSet.Urunler' table. You can move, or remove it, as needed.
             Baslangic();
             KategoriDoldur();
+            SubeDoldur();
+            cmbSube.Text = "seçiniz...";
+            cmbKategori.Text = "seçiniz...";
         }
 
         private void btnKategoriEkle_Click(object sender, EventArgs e)
@@ -132,7 +140,7 @@ namespace EnvanterProject
                 int _id = Convert.ToInt32(txtUrunId.Text);
                 if (db.Urunler.Any(x => x.Id == _id))
                 {
-                    if (cmbKategori.Text != "" && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && txtKullanici.Text != "" && txtSube.Text != "")
+                    if (cmbKategori.Text != "seçiniz..." && txtMarka.Text != "" && txtModel.Text != "" && txtSeriNo.Text != "" && cmbSube.Text != "seçiniz..." && txtKullanici.Text != "")
                     {
                         if (db.Urunler.Any(x => x.SeriNo == txtSeriNo.Text && x.Id != _id))
                         {
@@ -147,7 +155,7 @@ namespace EnvanterProject
                             guncelle.SeriNo = txtSeriNo.Text;
                             guncelle.Ozellik = txtOzellik.Text;
                             guncelle.Kullanici = txtKullanici.Text;
-                            guncelle.Sube = txtSube.Text;
+                            guncelle.Sube = cmbSube.Text;
                             guncelle.Aciklama = txtAciklama.Text;
                             guncelle.Kaydeden = SystemInformation.UserName;
                             guncelle.Tarih = DateTime.Now;
@@ -188,88 +196,29 @@ namespace EnvanterProject
             }
         }
 
-        private void txtUrunKullaniciAra_TextChanged(object sender, EventArgs e)
+        private void GenelArama()
         {
-            if (txtUrunKullaniciAra.Text.Length > 1)
+            try
             {
-                string urun = txtUrunKullaniciAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Kullanici.Contains(urun) ).OrderByDescending(a => a.Id).ToList();
+                gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text)).ToList();
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
-            else
+            catch (Exception ex)
             {
-                Baslangic();
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
-        private void txtUrunKategoriAra_TextChanged(object sender, EventArgs e)
+        private void Aramasifirla()
         {
-            if (txtUrunKategoriAra.Text.Length > 1)
-            {
-                string urun = txtUrunKategoriAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Kategori.Contains(urun)).ToList();
-                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
-            }
-            else
-            {
-                Baslangic();
-            }
-        }
-
-        private void txtUrunSeriNoAra_TextChanged(object sender, EventArgs e)
-        {
-            if (txtUrunSeriNoAra.Text.Length > 1)
-            {
-                string urun = txtUrunSeriNoAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.SeriNo.Contains(urun)).ToList();
-                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
-            }
-            else
-            {
-                Baslangic();
-            }
-        }
-
-        private void txtUrunMarkaAra_TextChanged(object sender, EventArgs e)
-        {
-            if (txtUrunMarkaAra.Text.Length > 1)
-            {
-                string urun = txtUrunMarkaAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Marka.Contains(urun)).ToList();
-                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
-            }
-            else
-            {
-                Baslangic();
-            }
-        }
-
-        private void txtUrunModelAra_TextChanged(object sender, EventArgs e)
-        {
-            if (txtUrunModelAra.Text.Length > 1)
-            {
-                string urun = txtUrunModelAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Model.Contains(urun)).ToList();
-                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
-            }
-            else
-            {
-                Baslangic();
-            }
-        }
-
-        private void txtUruLokasyonAra_TextChanged(object sender, EventArgs e)
-        {
-            if (txtUruSubeAra.Text.Length > 1)
-            {
-                string urun = txtUruSubeAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Sube.Contains(urun)).ToList();
-                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
-            }
-            else
-            {
-                Baslangic();
-            }
+            txtUrunOzellikAra.Clear();
+            txtUrunKategoriAra.Clear();
+            txtUrunKullaniciAra.Clear();
+            txtUrunSeriNoAra.Clear();
+            txtUrunMarkaAra.Clear();
+            txtUrunModelAra.Clear();
+            txtUruSubeAra.Clear();
+            Baslangic();
         }
 
         private void btnGetir_Click(object sender, EventArgs e)
@@ -302,7 +251,7 @@ namespace EnvanterProject
                 }
             }
         }
-        
+
         private void gridUrunler_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
@@ -322,7 +271,7 @@ namespace EnvanterProject
             txtSeriNo.Text = serino;
             txtAciklama.Text = aciklama;
             txtKullanici.Text = kullanici;
-            txtSube.Text = sube;
+            cmbSube.Text = sube;
             txtOzellik.Text = ozellik;
             txtUrunId.Text = id;
         }
@@ -348,18 +297,14 @@ namespace EnvanterProject
             }
         }
 
-        private void txtUrunOzellikAra_TextChanged(object sender, EventArgs e)
+        private void btnGenelArama_Click(object sender, EventArgs e)
         {
-            if (txtUrunOzellikAra.Text.Length > 1)
-            {
-                string urun = txtUrunOzellikAra.Text;
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(urun)).ToList();
-                txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
-            }
-            else
-            {
-                Baslangic();
-            }
+            GenelArama();
+        }
+
+        private void btnAramaTemizle_Click(object sender, EventArgs e)
+        {
+            Aramasifirla();
         }
     }
 }

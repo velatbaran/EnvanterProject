@@ -22,6 +22,13 @@
           <Property Name="Eposta" Type="nvarchar" MaxLength="100" />
           <Property Name="Sifre" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="Subeler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="Urunler">
           <Key>
             <PropertyRef Name="Id" />
@@ -54,6 +61,7 @@
         <EntityContainer Name="EnvanterDbModelStoreContainer">
           <EntitySet Name="Kategoriler" EntityType="Self.Kategoriler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subeler" EntityType="Self.Subeler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Urunler" EntityType="Self.Urunler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="YapilanCalismalar" EntityType="Self.YapilanCalismalar" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -66,6 +74,7 @@
           <EntitySet Name="Kullanicilar" EntityType="EnvanterDbModel.Kullanicilar" />
           <EntitySet Name="YapilanCalismalar" EntityType="EnvanterDbModel.YapilanCalismalar" />
           <EntitySet Name="Urunler" EntityType="EnvanterDbModel.Urunler" />
+          <EntitySet Name="Subeler" EntityType="EnvanterDbModel.Subeler" />
         </EntityContainer>
         <EntityType Name="Kategoriler">
           <Key>
@@ -112,6 +121,13 @@
           <Property Name="Sube" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="DateTime" Precision="3" />
           <Property Name="Kaydeden" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Subeler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -165,6 +181,14 @@
                 <ScalarProperty Name="Model" ColumnName="Model" />
                 <ScalarProperty Name="Marka" ColumnName="Marka" />
                 <ScalarProperty Name="Kategori" ColumnName="Kategori" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subeler">
+            <EntityTypeMapping TypeName="EnvanterDbModel.Subeler">
+              <MappingFragment StoreEntitySet="Subeler">
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

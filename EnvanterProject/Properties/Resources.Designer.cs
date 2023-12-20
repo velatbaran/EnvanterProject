@@ -63,6 +63,16 @@ namespace EnvanterProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ara2424 {
+            get {
+                object obj = ResourceManager.GetObject("ara2424", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap backup4854 {
             get {
                 object obj = ResourceManager.GetObject("backup4854", resourceCulture);

@@ -171,6 +171,9 @@
     </Compile>
     <Compile Include="Raporlar.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Subeler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Urunler.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -271,6 +274,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ara2424.png" />
     <Content Include="Resources\login.png" />
     <None Include="Resources\restore48541.png" />
     <None Include="Resources\shuffle.png" />
