@@ -16,7 +16,7 @@ namespace EnvanterProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fBaslangic());           
+            Application.Run(new fUrunEkle());           
             //Application.Run(new fUrunEkle());           
             //Application.Run(new fKategoriEkle());
             //Application.Run(new fYapilanCalisma());

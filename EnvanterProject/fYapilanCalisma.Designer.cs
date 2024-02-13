@@ -89,7 +89,7 @@ namespace EnvanterProject
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.DimGray;
+            this.groupBox2.BackColor = System.Drawing.Color.Teal;
             this.groupBox2.Controls.Add(this.btnYapilacakIsSifirla);
             this.groupBox2.Controls.Add(this.btnYapilacakIsGetir);
             this.groupBox2.Controls.Add(this.label20);
@@ -98,7 +98,7 @@ namespace EnvanterProject
             this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(913, 23);
+            this.groupBox2.Location = new System.Drawing.Point(745, 15);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(307, 152);
             this.groupBox2.TabIndex = 29;
@@ -107,7 +107,7 @@ namespace EnvanterProject
             // 
             // btnYapilacakIsSifirla
             // 
-            this.btnYapilacakIsSifirla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnYapilacakIsSifirla.BackColor = System.Drawing.Color.Teal;
             this.btnYapilacakIsSifirla.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsSifirla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsSifirla.ForeColor = System.Drawing.Color.White;
@@ -214,7 +214,7 @@ namespace EnvanterProject
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.gridYapilanIsler.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridYapilanIsler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridYapilanIsler.Size = new System.Drawing.Size(1263, 376);
+            this.gridYapilanIsler.Size = new System.Drawing.Size(1263, 413);
             this.gridYapilanIsler.TabIndex = 2;
             this.gridYapilanIsler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridYapilanIsler_CellContentClick);
             // 
@@ -249,7 +249,7 @@ namespace EnvanterProject
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Teal;
             this.splitContainer1.Panel1.Controls.Add(this.txtIsArama);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.txtBolgeMudurluk);
@@ -281,13 +281,13 @@ namespace EnvanterProject
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel2.Controls.Add(this.gridYapilanIsler);
             this.splitContainer1.Size = new System.Drawing.Size(1263, 683);
-            this.splitContainer1.SplitterDistance = 301;
+            this.splitContainer1.SplitterDistance = 264;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 1;
             // 
             // txtIsArama
             // 
-            this.txtIsArama.Location = new System.Drawing.Point(563, 271);
+            this.txtIsArama.Location = new System.Drawing.Point(803, 213);
             this.txtIsArama.Name = "txtIsArama";
             this.txtIsArama.Size = new System.Drawing.Size(345, 20);
             this.txtIsArama.TabIndex = 34;
@@ -298,7 +298,7 @@ namespace EnvanterProject
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(482, 274);
+            this.label4.Location = new System.Drawing.Point(722, 216);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 14);
@@ -329,7 +329,7 @@ namespace EnvanterProject
             // 
             // btnYapilacakIsGuncelle
             // 
-            this.btnYapilacakIsGuncelle.BackColor = System.Drawing.Color.Purple;
+            this.btnYapilacakIsGuncelle.BackColor = System.Drawing.Color.Teal;
             this.btnYapilacakIsGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsGuncelle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -345,7 +345,7 @@ namespace EnvanterProject
             // 
             // btnYapilacakTemizle
             // 
-            this.btnYapilacakTemizle.BackColor = System.Drawing.Color.DimGray;
+            this.btnYapilacakTemizle.BackColor = System.Drawing.Color.Teal;
             this.btnYapilacakTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakTemizle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -372,12 +372,12 @@ namespace EnvanterProject
             // 
             // btnYapilacakIsExcelRapor
             // 
-            this.btnYapilacakIsExcelRapor.BackColor = System.Drawing.Color.Green;
+            this.btnYapilacakIsExcelRapor.BackColor = System.Drawing.Color.Teal;
             this.btnYapilacakIsExcelRapor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsExcelRapor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsExcelRapor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnYapilacakIsExcelRapor.Image = global::EnvanterProject.Properties.Resources.backup4854;
-            this.btnYapilacakIsExcelRapor.Location = new System.Drawing.Point(1149, 229);
+            this.btnYapilacakIsExcelRapor.Location = new System.Drawing.Point(1058, 104);
             this.btnYapilacakIsExcelRapor.Name = "btnYapilacakIsExcelRapor";
             this.btnYapilacakIsExcelRapor.Size = new System.Drawing.Size(102, 63);
             this.btnYapilacakIsExcelRapor.TabIndex = 9;
@@ -388,7 +388,7 @@ namespace EnvanterProject
             // 
             // txtToplamYapilacakIsSayisi
             // 
-            this.txtToplamYapilacakIsSayisi.Location = new System.Drawing.Point(1059, 272);
+            this.txtToplamYapilacakIsSayisi.Location = new System.Drawing.Point(1181, 211);
             this.txtToplamYapilacakIsSayisi.Name = "txtToplamYapilacakIsSayisi";
             this.txtToplamYapilacakIsSayisi.ReadOnly = true;
             this.txtToplamYapilacakIsSayisi.Size = new System.Drawing.Size(70, 20);
@@ -399,16 +399,16 @@ namespace EnvanterProject
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(915, 274);
+            this.label9.Location = new System.Drawing.Point(1177, 193);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 14);
+            this.label9.Size = new System.Drawing.Size(51, 14);
             this.label9.TabIndex = 17;
-            this.label9.Text = "Yapılan Çalışma Sayısı";
+            this.label9.Text = "Toplam";
             // 
             // btnYapilacakIsEkle
             // 
-            this.btnYapilacakIsEkle.BackColor = System.Drawing.Color.Blue;
+            this.btnYapilacakIsEkle.BackColor = System.Drawing.Color.Teal;
             this.btnYapilacakIsEkle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYapilacakIsEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYapilacakIsEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;

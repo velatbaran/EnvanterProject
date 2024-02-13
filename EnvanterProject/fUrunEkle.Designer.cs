@@ -46,6 +46,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAramaTemizle = new System.Windows.Forms.Button();
+            this.btnGenelArama = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.txtUrunOzellikAra = new System.Windows.Forms.TextBox();
@@ -68,13 +70,18 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtUrunKullaniciAra = new System.Windows.Forms.TextBox();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtUrunId = new System.Windows.Forms.TextBox();
             this.lblUrunId = new System.Windows.Forms.Label();
+            this.btnIptal = new System.Windows.Forms.Button();
             this.txtAciklama = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.lblGirisYapan = new System.Windows.Forms.Label();
+            this.btnKategoriEkle = new System.Windows.Forms.Button();
+            this.btnExcelRapor = new System.Windows.Forms.Button();
             this.txtUrunSayisi = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnUrunKaydet = new System.Windows.Forms.Button();
             this.txtKullanici = new System.Windows.Forms.TextBox();
             this.txtSeriNo = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
@@ -86,23 +93,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.seçeneklerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yapılanÇalışmalarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridUrunler = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
-            this.btnAramaTemizle = new System.Windows.Forms.Button();
-            this.btnGenelArama = new System.Windows.Forms.Button();
-            this.btnGuncelle = new System.Windows.Forms.Button();
-            this.btnIptal = new System.Windows.Forms.Button();
-            this.btnKategoriEkle = new System.Windows.Forms.Button();
-            this.btnExcelRapor = new System.Windows.Forms.Button();
-            this.btnUrunKaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -148,6 +152,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
             this.splitContainer1.Panel1.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.splitContainer1.Panel1.ForeColor = System.Drawing.Color.Black;
             // 
@@ -155,7 +160,7 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel2.Controls.Add(this.gridUrunler);
-            this.splitContainer1.Size = new System.Drawing.Size(1248, 661);
+            this.splitContainer1.Size = new System.Drawing.Size(1248, 712);
             this.splitContainer1.SplitterDistance = 301;
             this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 0;
@@ -192,10 +197,10 @@
             // lblHosgeldiniz
             // 
             this.lblHosgeldiniz.AutoSize = true;
-            this.lblHosgeldiniz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblHosgeldiniz.Location = new System.Drawing.Point(3, 5);
+            this.lblHosgeldiniz.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblHosgeldiniz.Location = new System.Drawing.Point(8, 30);
             this.lblHosgeldiniz.Name = "lblHosgeldiniz";
-            this.lblHosgeldiniz.Size = new System.Drawing.Size(111, 18);
+            this.lblHosgeldiniz.Size = new System.Drawing.Size(84, 13);
             this.lblHosgeldiniz.TabIndex = 30;
             this.lblHosgeldiniz.Text = "Hoşgeldiniz : ";
             // 
@@ -313,6 +318,41 @@
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Arama Seçenekleri";
+            // 
+            // btnAramaTemizle
+            // 
+            this.btnAramaTemizle.BackColor = System.Drawing.Color.Black;
+            this.btnAramaTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAramaTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAramaTemizle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAramaTemizle.ForeColor = System.Drawing.Color.White;
+            this.btnAramaTemizle.Image = global::EnvanterProject.Properties.Resources.clear4848;
+            this.btnAramaTemizle.Location = new System.Drawing.Point(111, 206);
+            this.btnAramaTemizle.Name = "btnAramaTemizle";
+            this.btnAramaTemizle.Size = new System.Drawing.Size(174, 27);
+            this.btnAramaTemizle.TabIndex = 36;
+            this.btnAramaTemizle.Text = "Temizle";
+            this.btnAramaTemizle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAramaTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAramaTemizle.UseVisualStyleBackColor = false;
+            this.btnAramaTemizle.Click += new System.EventHandler(this.btnAramaTemizle_Click);
+            // 
+            // btnGenelArama
+            // 
+            this.btnGenelArama.BackColor = System.Drawing.Color.Gray;
+            this.btnGenelArama.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenelArama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenelArama.ForeColor = System.Drawing.Color.White;
+            this.btnGenelArama.Image = global::EnvanterProject.Properties.Resources.ara2424;
+            this.btnGenelArama.Location = new System.Drawing.Point(111, 177);
+            this.btnGenelArama.Name = "btnGenelArama";
+            this.btnGenelArama.Size = new System.Drawing.Size(174, 27);
+            this.btnGenelArama.TabIndex = 35;
+            this.btnGenelArama.Text = "Ara";
+            this.btnGenelArama.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGenelArama.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGenelArama.UseVisualStyleBackColor = false;
+            this.btnGenelArama.Click += new System.EventHandler(this.btnGenelArama_Click);
             // 
             // label25
             // 
@@ -512,6 +552,22 @@
             this.txtUrunKullaniciAra.Size = new System.Drawing.Size(174, 22);
             this.txtUrunKullaniciAra.TabIndex = 14;
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
+            this.btnGuncelle.Location = new System.Drawing.Point(822, 84);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(90, 57);
+            this.btnGuncelle.TabIndex = 10;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
             // txtUrunId
             // 
             this.txtUrunId.Location = new System.Drawing.Point(103, 229);
@@ -530,6 +586,22 @@
             this.lblUrunId.TabIndex = 24;
             this.lblUrunId.Text = "Ürün Id";
             this.lblUrunId.Visible = false;
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.BackColor = System.Drawing.Color.DimGray;
+            this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIptal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnIptal.Image = global::EnvanterProject.Properties.Resources.clear4848;
+            this.btnIptal.Location = new System.Drawing.Point(822, 147);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(90, 57);
+            this.btnIptal.TabIndex = 11;
+            this.btnIptal.Text = "Temizle";
+            this.btnIptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnIptal.UseVisualStyleBackColor = false;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // txtAciklama
             // 
@@ -555,12 +627,42 @@
             // lblGirisYapan
             // 
             this.lblGirisYapan.AutoSize = true;
-            this.lblGirisYapan.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGirisYapan.Location = new System.Drawing.Point(115, 4);
+            this.lblGirisYapan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblGirisYapan.Location = new System.Drawing.Point(100, 30);
             this.lblGirisYapan.Name = "lblGirisYapan";
-            this.lblGirisYapan.Size = new System.Drawing.Size(69, 18);
+            this.lblGirisYapan.Size = new System.Drawing.Size(54, 13);
             this.lblGirisYapan.TabIndex = 21;
             this.lblGirisYapan.Text = "kullanici";
+            // 
+            // btnKategoriEkle
+            // 
+            this.btnKategoriEkle.BackColor = System.Drawing.Color.DarkGray;
+            this.btnKategoriEkle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKategoriEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnKategoriEkle.Image = global::EnvanterProject.Properties.Resources.Ekle24;
+            this.btnKategoriEkle.Location = new System.Drawing.Point(406, 51);
+            this.btnKategoriEkle.Name = "btnKategoriEkle";
+            this.btnKategoriEkle.Size = new System.Drawing.Size(40, 30);
+            this.btnKategoriEkle.TabIndex = 20;
+            this.btnKategoriEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnKategoriEkle.UseVisualStyleBackColor = false;
+            this.btnKategoriEkle.Click += new System.EventHandler(this.btnKategoriEkle_Click);
+            // 
+            // btnExcelRapor
+            // 
+            this.btnExcelRapor.BackColor = System.Drawing.Color.Green;
+            this.btnExcelRapor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExcelRapor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcelRapor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnExcelRapor.Image = global::EnvanterProject.Properties.Resources.backup4854;
+            this.btnExcelRapor.Location = new System.Drawing.Point(772, 238);
+            this.btnExcelRapor.Name = "btnExcelRapor";
+            this.btnExcelRapor.Size = new System.Drawing.Size(102, 63);
+            this.btnExcelRapor.TabIndex = 12;
+            this.btnExcelRapor.Text = "Rapor";
+            this.btnExcelRapor.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnExcelRapor.UseVisualStyleBackColor = false;
+            this.btnExcelRapor.Click += new System.EventHandler(this.btnExcelRapor_Click);
             // 
             // txtUrunSayisi
             // 
@@ -581,6 +683,22 @@
             this.label9.Size = new System.Drawing.Size(122, 14);
             this.label9.TabIndex = 17;
             this.label9.Text = "Toplam Ürün Sayısı";
+            // 
+            // btnUrunKaydet
+            // 
+            this.btnUrunKaydet.BackColor = System.Drawing.Color.LightGreen;
+            this.btnUrunKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUrunKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUrunKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnUrunKaydet.Image = global::EnvanterProject.Properties.Resources.Ekle24;
+            this.btnUrunKaydet.Location = new System.Drawing.Point(822, 23);
+            this.btnUrunKaydet.Name = "btnUrunKaydet";
+            this.btnUrunKaydet.Size = new System.Drawing.Size(90, 52);
+            this.btnUrunKaydet.TabIndex = 9;
+            this.btnUrunKaydet.Text = "Ekle";
+            this.btnUrunKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUrunKaydet.UseVisualStyleBackColor = false;
+            this.btnUrunKaydet.Click += new System.EventHandler(this.btnUrunKaydet_Click);
             // 
             // txtKullanici
             // 
@@ -696,6 +814,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Kategori";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seçeneklerToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1248, 24);
+            this.menuStrip1.TabIndex = 33;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // seçeneklerToolStripMenuItem
+            // 
+            this.seçeneklerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.yapılanÇalışmalarToolStripMenuItem});
+            this.seçeneklerToolStripMenuItem.Name = "seçeneklerToolStripMenuItem";
+            this.seçeneklerToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.seçeneklerToolStripMenuItem.Text = "Seçenekler";
+            // 
+            // yapılanÇalışmalarToolStripMenuItem
+            // 
+            this.yapılanÇalışmalarToolStripMenuItem.Name = "yapılanÇalışmalarToolStripMenuItem";
+            this.yapılanÇalışmalarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.yapılanÇalışmalarToolStripMenuItem.Text = "Yapılan Çalışmalar";
+            this.yapılanÇalışmalarToolStripMenuItem.Click += new System.EventHandler(this.yapılanÇalışmalarToolStripMenuItem_Click);
+            // 
             // gridUrunler
             // 
             this.gridUrunler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -728,7 +871,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.gridUrunler.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridUrunler.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridUrunler.Size = new System.Drawing.Size(1248, 354);
+            this.gridUrunler.Size = new System.Drawing.Size(1248, 405);
             this.gridUrunler.TabIndex = 2;
             this.gridUrunler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridUrunler_CellContentClick);
             // 
@@ -754,129 +897,18 @@
             this.entityCommand1.EnablePlanCaching = true;
             this.entityCommand1.Transaction = null;
             // 
-            // btnAramaTemizle
-            // 
-            this.btnAramaTemizle.BackColor = System.Drawing.Color.Black;
-            this.btnAramaTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAramaTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAramaTemizle.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAramaTemizle.ForeColor = System.Drawing.Color.White;
-            this.btnAramaTemizle.Image = global::EnvanterProject.Properties.Resources.clear4848;
-            this.btnAramaTemizle.Location = new System.Drawing.Point(111, 206);
-            this.btnAramaTemizle.Name = "btnAramaTemizle";
-            this.btnAramaTemizle.Size = new System.Drawing.Size(174, 27);
-            this.btnAramaTemizle.TabIndex = 36;
-            this.btnAramaTemizle.Text = "Temizle";
-            this.btnAramaTemizle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAramaTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAramaTemizle.UseVisualStyleBackColor = false;
-            this.btnAramaTemizle.Click += new System.EventHandler(this.btnAramaTemizle_Click);
-            // 
-            // btnGenelArama
-            // 
-            this.btnGenelArama.BackColor = System.Drawing.Color.Gray;
-            this.btnGenelArama.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenelArama.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenelArama.ForeColor = System.Drawing.Color.White;
-            this.btnGenelArama.Image = global::EnvanterProject.Properties.Resources.ara2424;
-            this.btnGenelArama.Location = new System.Drawing.Point(111, 177);
-            this.btnGenelArama.Name = "btnGenelArama";
-            this.btnGenelArama.Size = new System.Drawing.Size(174, 27);
-            this.btnGenelArama.TabIndex = 35;
-            this.btnGenelArama.Text = "Ara";
-            this.btnGenelArama.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGenelArama.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGenelArama.UseVisualStyleBackColor = false;
-            this.btnGenelArama.Click += new System.EventHandler(this.btnGenelArama_Click);
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuncelle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnGuncelle.Image = global::EnvanterProject.Properties.Resources.duzenle32;
-            this.btnGuncelle.Location = new System.Drawing.Point(822, 84);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(90, 57);
-            this.btnGuncelle.TabIndex = 10;
-            this.btnGuncelle.Text = "Güncelle";
-            this.btnGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGuncelle.UseVisualStyleBackColor = false;
-            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // btnIptal
-            // 
-            this.btnIptal.BackColor = System.Drawing.Color.DimGray;
-            this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIptal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnIptal.Image = global::EnvanterProject.Properties.Resources.clear4848;
-            this.btnIptal.Location = new System.Drawing.Point(822, 147);
-            this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(90, 57);
-            this.btnIptal.TabIndex = 11;
-            this.btnIptal.Text = "Temizle";
-            this.btnIptal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnIptal.UseVisualStyleBackColor = false;
-            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
-            // 
-            // btnKategoriEkle
-            // 
-            this.btnKategoriEkle.BackColor = System.Drawing.Color.DarkGray;
-            this.btnKategoriEkle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKategoriEkle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnKategoriEkle.Image = global::EnvanterProject.Properties.Resources.Ekle24;
-            this.btnKategoriEkle.Location = new System.Drawing.Point(406, 51);
-            this.btnKategoriEkle.Name = "btnKategoriEkle";
-            this.btnKategoriEkle.Size = new System.Drawing.Size(40, 30);
-            this.btnKategoriEkle.TabIndex = 20;
-            this.btnKategoriEkle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnKategoriEkle.UseVisualStyleBackColor = false;
-            this.btnKategoriEkle.Click += new System.EventHandler(this.btnKategoriEkle_Click);
-            // 
-            // btnExcelRapor
-            // 
-            this.btnExcelRapor.BackColor = System.Drawing.Color.Green;
-            this.btnExcelRapor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcelRapor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcelRapor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnExcelRapor.Image = global::EnvanterProject.Properties.Resources.backup4854;
-            this.btnExcelRapor.Location = new System.Drawing.Point(772, 238);
-            this.btnExcelRapor.Name = "btnExcelRapor";
-            this.btnExcelRapor.Size = new System.Drawing.Size(102, 63);
-            this.btnExcelRapor.TabIndex = 12;
-            this.btnExcelRapor.Text = "Rapor";
-            this.btnExcelRapor.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnExcelRapor.UseVisualStyleBackColor = false;
-            this.btnExcelRapor.Click += new System.EventHandler(this.btnExcelRapor_Click);
-            // 
-            // btnUrunKaydet
-            // 
-            this.btnUrunKaydet.BackColor = System.Drawing.Color.LightGreen;
-            this.btnUrunKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUrunKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUrunKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUrunKaydet.Image = global::EnvanterProject.Properties.Resources.Ekle24;
-            this.btnUrunKaydet.Location = new System.Drawing.Point(822, 23);
-            this.btnUrunKaydet.Name = "btnUrunKaydet";
-            this.btnUrunKaydet.Size = new System.Drawing.Size(90, 52);
-            this.btnUrunKaydet.TabIndex = 9;
-            this.btnUrunKaydet.Text = "Ekle";
-            this.btnUrunKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnUrunKaydet.UseVisualStyleBackColor = false;
-            this.btnUrunKaydet.Click += new System.EventHandler(this.btnUrunKaydet_Click);
-            // 
             // fUrunEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1248, 661);
+            this.ClientSize = new System.Drawing.Size(1248, 712);
             this.Controls.Add(this.splitContainer1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fUrunEkle";
             this.Text = "Ürün Giriş Formu";
@@ -891,6 +923,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunler)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -963,6 +997,9 @@
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.Button btnAramaTemizle;
         private System.Windows.Forms.Button btnGenelArama;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem seçeneklerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem yapılanÇalışmalarToolStripMenuItem;
     }
 }
 

@@ -306,5 +306,11 @@ namespace EnvanterProject
         {
             Aramasifirla();
         }
+
+        private void yapılanÇalışmalarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fYapilanCalisma frm = new fYapilanCalisma();
+            frm.ShowDialog();
+        }
     }
 }
