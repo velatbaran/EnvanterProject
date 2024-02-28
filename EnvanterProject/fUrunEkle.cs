@@ -78,7 +78,7 @@ namespace EnvanterProject
             {
                 if (db.Urunler.Any(x => x.SeriNo == txtSeriNo.Text))
                 {
-                    MessageBox.Show("Bu seri no ya sahip ürün zaten kayıtlı!");
+                    MessageBox.Show("Bu seri no ya sahip ürün zaten kayıtlı!", "Ürün Ekleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
                 else
                 {
@@ -97,12 +97,12 @@ namespace EnvanterProject
                     db.SaveChanges();
                     Temizle();
                     TumUrunleriGetir();
-                    MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
+                    MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.", "Ürün Ekleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
             }
             else
             {
-                MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!");
+                MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!", "Ürün Ekleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 txtMarka.Focus();
             }
         }
@@ -140,7 +140,7 @@ namespace EnvanterProject
                     {
                         if (db.Urunler.Any(x => x.SeriNo == txtSeriNo.Text && x.Id != _id))
                         {
-                            MessageBox.Show("Bu seri no ya sahip ürün zaten kayıtlı!");
+                            MessageBox.Show("Bu seri no ya sahip ürün zaten kayıtlı!", "Ürün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         }
                         else
                         {
@@ -158,23 +158,23 @@ namespace EnvanterProject
                             db.SaveChanges();
                             Temizle();
                             TumUrunleriGetir();
-                            MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.");
+                            MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.", "Ürün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!");
+                        MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!", "Ürün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         txtMarka.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Sistemde bu ürün kaydı bulunamadı!");
+                    MessageBox.Show("Sistemde bu ürün kaydı bulunamadı!", "Ürün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
             }
             else
             {
-                MessageBox.Show("Lütfen sistemde kayıtlı bir ürün seçiniz!");
+                MessageBox.Show("Lütfen sistemde kayıtlı bir ürün seçiniz!", "Ürün Güncelleme", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
 
@@ -182,7 +182,7 @@ namespace EnvanterProject
         {
             if (gridUrunler.Rows.Count == 0)
             {
-                MessageBox.Show("Raporda gösterilecek ürün bulunamadı!");
+                MessageBox.Show("Raporda gösterilecek ürün bulunamadı!", "Rapor Alma", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             else
             {
@@ -196,11 +196,12 @@ namespace EnvanterProject
         {
             try
             {
-                if (rdArizali.Checked ==true || rdFaal.Checked == true || rdKayittanDusurulme.Checked == true)
+                if (rdArizali.Checked == true || rdFaal.Checked == true || rdKayittanDusurulme.Checked == true)
                 {
                     if (rdArizali.Checked == true)
                     {
                         gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text) && a.Durum == rdArizali.Text).Select(k => new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
+
                     }
                     else if (rdFaal.Checked == true)
                     {
@@ -215,11 +216,17 @@ namespace EnvanterProject
                 {
                     gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text)).Select(k => new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
                 }
+
+                if (gridUrunler.Rows.Count == 0)
+                {
+                    txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
+                    MessageBox.Show("Kayıt bulunamadı!", "Ürün Arama", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.Message.ToString(), "Ürün Arama", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
 
@@ -256,19 +263,19 @@ namespace EnvanterProject
                 int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
                 int urunId = Convert.ToInt32(gridUrunler.Rows[seciliAlan].Cells[0].Value.ToString());
                 string urunMarka = gridUrunler.Rows[seciliAlan].Cells[2].Value.ToString();
-                DialogResult onay = MessageBox.Show(urunMarka + " ürününü silmek istdeğinize emin misiniz?", "Ürün Silme İşlemi", MessageBoxButtons.YesNo);
+                DialogResult onay = MessageBox.Show(urunMarka + " ürününü silmek istdeğinize emin misiniz?", "Ürün Silme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 if (onay == DialogResult.Yes)
                 {
                     var urun = db.Urunler.Find(urunId);
                     db.Urunler.Remove(urun);
                     db.SaveChanges();
-                    MessageBox.Show("Ürün silme işlemi başarılıyla gerçekleşti.");
+                    MessageBox.Show("Ürün silme işlemi başarılıyla gerçekleşti.", "Ürün Silme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     // Baslangic();
                     TumUrunleriGetir();
                 }
                 else
                 {
-                    MessageBox.Show("Silme işlemi iptal edildi!");
+                    MessageBox.Show("Silme işlemi iptal edildi!", "Ürün Silme", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
             }
         }
@@ -307,7 +314,7 @@ namespace EnvanterProject
 
         private void fUrunEkle_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult Cikis = MessageBox.Show("Ekrandan Çıkmak İstediğinizden Emin Misiniz?", "Çıkış Mesajı!", MessageBoxButtons.YesNo);
+            DialogResult Cikis = MessageBox.Show("Ekrandan Çıkmak İstediğinizden Emin Misiniz?", "Çıkış Mesajı!", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (Cikis == DialogResult.Yes)
             {
                 this.Hide();
