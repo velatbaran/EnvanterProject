@@ -78,7 +78,9 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -128,6 +130,12 @@
     </Compile>
     <Compile Include="fRaporGoster.Designer.cs">
       <DependentUpon>fRaporGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fUrunDurumGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fUrunDurumGuncelle.Designer.cs">
+      <DependentUpon>fUrunDurumGuncelle.cs</DependentUpon>
     </Compile>
     <Compile Include="fUrunEkle.cs">
       <SubType>Form</SubType>
@@ -194,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fRaporGoster.resx">
       <DependentUpon>fRaporGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUrunDurumGuncelle.resx">
+      <DependentUpon>fUrunDurumGuncelle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fUrunEkle.resx">
       <DependentUpon>fUrunEkle.cs</DependentUpon>
@@ -275,6 +286,8 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <None Include="Resources\ara2424.png" />
+    <None Include="Resources\defaultimage.png" />
+    <None Include="Resources\Excel32.png" />
     <Content Include="Resources\login.png" />
     <None Include="Resources\restore48541.png" />
     <None Include="Resources\shuffle.png" />

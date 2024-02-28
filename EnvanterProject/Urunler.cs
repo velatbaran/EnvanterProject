@@ -25,5 +25,6 @@ namespace EnvanterProject
         public string Sube { get; set; }
         public Nullable<System.DateTime> Tarih { get; set; }
         public string Kaydeden { get; set; }
+        public string Durum { get; set; }
     }
 }

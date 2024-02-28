@@ -15,7 +15,6 @@ namespace EnvanterProject
         private EnvanterDbEntities db = new EnvanterDbEntities();
         private Urunler urunler = new Urunler();
 
-
         public fUrunEkle()
         {
             InitializeComponent();
@@ -34,12 +33,13 @@ namespace EnvanterProject
             cmbSube.DataSource = db.Subeler.ToList();
         }
 
-        private void Baslangic()
+        public void TumUrunleriGetir()
         {
             // db.Configuration.LazyLoadingEnabled = false;
-            txtUrunSayisi.Text = Convert.ToString(db.Urunler.Count());
-            //var result = db.Urunler.OrderByDescending(x => x.Id).ToList();
-            gridUrunler.DataSource = db.Urunler.OrderByDescending(x => x.Id).ToList();
+            gridUrunler.DataSource = db.Urunler.Select(k => new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
+            //gridUrunler.DataSource = (from k in db.Urunler.ToList()
+            //                          select new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
+            // gridUrunler.DataSource = db.Urunler.OrderByDescending(x => x.Id).ToList();
             if (gridUrunler.Rows.Count > 0)
             {
                 gridUrunler.Columns[0].Visible = false;
@@ -53,11 +53,10 @@ namespace EnvanterProject
                 gridUrunler.Columns[8].HeaderText = "Şube";
                 gridUrunler.Columns[9].HeaderText = "Tarih";
                 gridUrunler.Columns[10].HeaderText = "Kaydeden";
+                gridUrunler.Columns[11].HeaderText = "Durum";
+                lblGirisYapan.Text = SystemInformation.UserName;
+                txtUrunSayisi.Text = Convert.ToString(db.Urunler.Count());
             }
-            gridUrunler.EnableHeadersVisualStyles = false;
-            gridUrunler.ColumnHeadersDefaultCellStyle.BackColor = Color.GreenYellow;
-            this.gridUrunler.DefaultCellStyle.Font = new Font("Tahoma", 8);
-            lblGirisYapan.Text = SystemInformation.UserName;
         }
 
         private void Temizle()
@@ -93,10 +92,11 @@ namespace EnvanterProject
                     urunler.Aciklama = txtAciklama.Text;
                     urunler.Kaydeden = SystemInformation.UserName;
                     urunler.Tarih = DateTime.Now;
+                    urunler.Durum = "Faal";
                     db.Urunler.Add(urunler);
                     db.SaveChanges();
                     Temizle();
-                    Baslangic();
+                    TumUrunleriGetir();
                     MessageBox.Show("Kayıt işlemi başarıyla gerçekleşti.");
                 }
             }
@@ -107,11 +107,6 @@ namespace EnvanterProject
             }
         }
 
-        private void txtUrunAra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIptal_Click(object sender, EventArgs e)
         {
             Temizle();
@@ -120,7 +115,8 @@ namespace EnvanterProject
         private void fUrunEkle_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'envanterDbDataSet.Urunler' table. You can move, or remove it, as needed.
-            Baslangic();
+            // Baslangic();
+            TumUrunleriGetir();
             KategoriDoldur();
             SubeDoldur();
             cmbSube.Text = "seçiniz...";
@@ -161,7 +157,7 @@ namespace EnvanterProject
                             guncelle.Tarih = DateTime.Now;
                             db.SaveChanges();
                             Temizle();
-                            Baslangic();
+                            TumUrunleriGetir();
                             MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.");
                         }
                     }
@@ -200,7 +196,25 @@ namespace EnvanterProject
         {
             try
             {
-                gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text)).ToList();
+                if (rdArizali.Checked ==true || rdFaal.Checked == true || rdKayittanDusurulme.Checked == true)
+                {
+                    if (rdArizali.Checked == true)
+                    {
+                        gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text) && a.Durum == rdArizali.Text).Select(k => new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
+                    }
+                    else if (rdFaal.Checked == true)
+                    {
+                        gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text) && a.Durum == rdFaal.Text).Select(k => new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
+                    }
+                    else if (rdKayittanDusurulme.Checked == true)
+                    {
+                        gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text) && a.Durum == rdKayittanDusurulme.Text).Select(k => new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
+                    }
+                }
+                else
+                {
+                    gridUrunler.DataSource = db.Urunler.Where(a => a.Ozellik.Contains(txtUrunOzellikAra.Text) && a.Kategori.Contains(txtUrunKategoriAra.Text) && a.Kullanici.Contains(txtUrunKullaniciAra.Text) && a.SeriNo.Contains(txtUrunSeriNoAra.Text) && a.Marka.Contains(txtUrunMarkaAra.Text) && a.Model.Contains(txtUrunModelAra.Text) && a.Sube.Contains(txtUruSubeAra.Text)).Select(k => new { k.Id, k.Kategori, k.Marka, k.Model, k.SeriNo, k.Ozellik, k.Aciklama, k.Kullanici, k.Sube, k.Tarih, k.Kaydeden, k.Durum }).OrderByDescending(x => x.Id).ToList();
+                }
                 txtUrunSayisi.Text = Convert.ToString(gridUrunler.Rows.Count);
             }
             catch (Exception ex)
@@ -218,7 +232,13 @@ namespace EnvanterProject
             txtUrunMarkaAra.Clear();
             txtUrunModelAra.Clear();
             txtUruSubeAra.Clear();
-            Baslangic();
+            rdArizali.Checked = false;
+            rdFaal.Checked = false;
+            rdKayittanDusurulme.Checked = false;
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
+            //Baslangic();
+            TumUrunleriGetir();
         }
 
         private void btnGetir_Click(object sender, EventArgs e)
@@ -243,7 +263,8 @@ namespace EnvanterProject
                     db.Urunler.Remove(urun);
                     db.SaveChanges();
                     MessageBox.Show("Ürün silme işlemi başarılıyla gerçekleşti.");
-                    Baslangic();
+                    // Baslangic();
+                    TumUrunleriGetir();
                 }
                 else
                 {
@@ -280,7 +301,8 @@ namespace EnvanterProject
         {
             dateTimePicker1.Value = DateTime.Now;
             dateTimePicker2.Value = DateTime.Now;
-            Baslangic();
+            //  Baslangic();
+            TumUrunleriGetir();
         }
 
         private void fUrunEkle_FormClosing(object sender, FormClosingEventArgs e)
@@ -297,20 +319,28 @@ namespace EnvanterProject
             }
         }
 
-        private void btnGenelArama_Click(object sender, EventArgs e)
-        {
-            GenelArama();
-        }
-
-        private void btnAramaTemizle_Click(object sender, EventArgs e)
-        {
-            Aramasifirla();
-        }
-
         private void yapılanÇalışmalarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fYapilanCalisma frm = new fYapilanCalisma();
             frm.ShowDialog();
+        }
+
+        private void durumGüncelleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fUrunDurumGuncelle f = new fUrunDurumGuncelle();
+            int seciliAlan = gridUrunler.SelectedCells[0].RowIndex;
+            f.lblUrunDurumId.Text = gridUrunler.Rows[seciliAlan].Cells[0].Value.ToString();
+            f.Show();
+        }
+
+        private void btnGenelArama_Click_1(object sender, EventArgs e)
+        {
+            GenelArama();
+        }
+
+        private void btnAramaTemizle_Click_1(object sender, EventArgs e)
+        {
+            Aramasifirla();
         }
     }
 }

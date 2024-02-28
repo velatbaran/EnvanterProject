@@ -34,7 +34,8 @@ namespace EnvanterProject
                     Sube = dgv.Rows[i].Cells["Sube"].Value?.ToString(),
                     Aciklama = dgv.Rows[i].Cells["Aciklama"].Value?.ToString(),
                     Kaydeden = dgv.Rows[i].Cells["Kaydeden"].Value?.ToString(),
-                    Tarih = Convert.ToDateTime(dgv.Rows[i].Cells["Tarih"].Value?.ToString())
+                    Tarih = Convert.ToDateTime(dgv.Rows[i].Cells["Tarih"].Value?.ToString()),
+                    Durum = dgv.Rows[i].Cells["Durum"].Value?.ToString()
                 });
             }
 

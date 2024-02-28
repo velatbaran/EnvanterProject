@@ -44,6 +44,7 @@
           <Property Name="Sube" Type="nvarchar" MaxLength="100" />
           <Property Name="Tarih" Type="datetime" />
           <Property Name="Kaydeden" Type="nvarchar" MaxLength="100" />
+          <Property Name="Durum" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="YapilanCalismalar">
           <Key>
@@ -73,8 +74,8 @@
           <EntitySet Name="Kategoriler" EntityType="EnvanterDbModel.Kategoriler" />
           <EntitySet Name="Kullanicilar" EntityType="EnvanterDbModel.Kullanicilar" />
           <EntitySet Name="YapilanCalismalar" EntityType="EnvanterDbModel.YapilanCalismalar" />
-          <EntitySet Name="Urunler" EntityType="EnvanterDbModel.Urunler" />
           <EntitySet Name="Subeler" EntityType="EnvanterDbModel.Subeler" />
+          <EntitySet Name="Urunler" EntityType="EnvanterDbModel.Urunler" />
         </EntityContainer>
         <EntityType Name="Kategoriler">
           <Key>
@@ -106,6 +107,13 @@
           <Property Name="Kaydeden" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="Subeler">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="Urunler">
           <Key>
             <PropertyRef Name="Id" />
@@ -121,13 +129,7 @@
           <Property Name="Sube" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Tarih" Type="DateTime" Precision="3" />
           <Property Name="Kaydeden" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Subeler">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Ad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -168,9 +170,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Subeler">
+            <EntityTypeMapping TypeName="EnvanterDbModel.Subeler">
+              <MappingFragment StoreEntitySet="Subeler">
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Urunler">
             <EntityTypeMapping TypeName="EnvanterDbModel.Urunler">
               <MappingFragment StoreEntitySet="Urunler">
+                <ScalarProperty Name="Durum" ColumnName="Durum" />
                 <ScalarProperty Name="Kaydeden" ColumnName="Kaydeden" />
                 <ScalarProperty Name="Tarih" ColumnName="Tarih" />
                 <ScalarProperty Name="Sube" ColumnName="Sube" />
@@ -181,14 +192,6 @@
                 <ScalarProperty Name="Model" ColumnName="Model" />
                 <ScalarProperty Name="Marka" ColumnName="Marka" />
                 <ScalarProperty Name="Kategori" ColumnName="Kategori" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Subeler">
-            <EntityTypeMapping TypeName="EnvanterDbModel.Subeler">
-              <MappingFragment StoreEntitySet="Subeler">
-                <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

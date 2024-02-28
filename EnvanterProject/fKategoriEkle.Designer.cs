@@ -29,6 +29,7 @@ namespace EnvanterProject
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fKategoriEkle));
             this.txtKategoriEkle = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listKategori = new System.Windows.Forms.ListBox();
@@ -38,7 +39,7 @@ namespace EnvanterProject
             // 
             // txtKategoriEkle
             // 
-            this.txtKategoriEkle.Location = new System.Drawing.Point(86, 41);
+            this.txtKategoriEkle.Location = new System.Drawing.Point(51, 20);
             this.txtKategoriEkle.Name = "txtKategoriEkle";
             this.txtKategoriEkle.Size = new System.Drawing.Size(231, 20);
             this.txtKategoriEkle.TabIndex = 1;
@@ -47,8 +48,8 @@ namespace EnvanterProject
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label2.Location = new System.Drawing.Point(25, 40);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 18);
@@ -58,7 +59,7 @@ namespace EnvanterProject
             // listKategori
             // 
             this.listKategori.FormattingEnabled = true;
-            this.listKategori.Location = new System.Drawing.Point(86, 89);
+            this.listKategori.Location = new System.Drawing.Point(51, 46);
             this.listKategori.Name = "listKategori";
             this.listKategori.Size = new System.Drawing.Size(231, 147);
             this.listKategori.TabIndex = 2;
@@ -66,31 +67,37 @@ namespace EnvanterProject
             // 
             // btnSil
             // 
-            this.btnSil.BackColor = System.Drawing.Color.Red;
+            this.btnSil.BackColor = System.Drawing.Color.Teal;
             this.btnSil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnSil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnSil.Image = global::EnvanterProject.Properties.Resources.cancel24;
-            this.btnSil.Location = new System.Drawing.Point(220, 245);
+            this.btnSil.Location = new System.Drawing.Point(51, 241);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(97, 57);
+            this.btnSil.Size = new System.Drawing.Size(231, 35);
             this.btnSil.TabIndex = 4;
             this.btnSil.Text = "Sil";
-            this.btnSil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnSil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSil.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnKategoriKaydet
             // 
-            this.btnKategoriKaydet.BackColor = System.Drawing.Color.Green;
+            this.btnKategoriKaydet.BackColor = System.Drawing.Color.Teal;
             this.btnKategoriKaydet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKategoriKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKategoriKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKategoriKaydet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnKategoriKaydet.Image = global::EnvanterProject.Properties.Resources.save24;
-            this.btnKategoriKaydet.Location = new System.Drawing.Point(86, 245);
+            this.btnKategoriKaydet.Location = new System.Drawing.Point(51, 199);
             this.btnKategoriKaydet.Name = "btnKategoriKaydet";
-            this.btnKategoriKaydet.Size = new System.Drawing.Size(97, 57);
+            this.btnKategoriKaydet.Size = new System.Drawing.Size(231, 37);
             this.btnKategoriKaydet.TabIndex = 3;
             this.btnKategoriKaydet.Text = "Kaydet";
-            this.btnKategoriKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnKategoriKaydet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnKategoriKaydet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnKategoriKaydet.UseVisualStyleBackColor = false;
             this.btnKategoriKaydet.Click += new System.EventHandler(this.btnKategoriKaydet_Click);
             // 
@@ -98,16 +105,19 @@ namespace EnvanterProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(355, 314);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.ClientSize = new System.Drawing.Size(298, 288);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.listKategori);
             this.Controls.Add(this.btnKategoriKaydet);
             this.Controls.Add(this.txtKategoriEkle);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fKategoriEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kategor iEkle";
+            this.Text = "Kategor Ekle";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fKategoriEkle_FormClosing);
             this.Load += new System.EventHandler(this.fKategoriEkle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

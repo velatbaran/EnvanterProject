@@ -702,6 +702,8 @@ namespace EnvanterProject {
             
             private global::System.Data.DataColumn columnKaydeden;
             
+            private global::System.Data.DataColumn columnDurum;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public UrunlerDataTable() {
@@ -825,6 +827,14 @@ namespace EnvanterProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DurumColumn {
+                get {
+                    return this.columnDurum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -860,7 +870,7 @@ namespace EnvanterProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public UrunlerRow AddUrunlerRow(string Kategori, string Marka, string Model, string SeriNo, string Ozellik, string Aciklama, string Kullanici, string Sube, System.DateTime Tarih, string Kaydeden) {
+            public UrunlerRow AddUrunlerRow(string Kategori, string Marka, string Model, string SeriNo, string Ozellik, string Aciklama, string Kullanici, string Sube, System.DateTime Tarih, string Kaydeden, string Durum) {
                 UrunlerRow rowUrunlerRow = ((UrunlerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -873,7 +883,8 @@ namespace EnvanterProject {
                         Kullanici,
                         Sube,
                         Tarih,
-                        Kaydeden};
+                        Kaydeden,
+                        Durum};
                 rowUrunlerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUrunlerRow);
                 return rowUrunlerRow;
@@ -914,6 +925,7 @@ namespace EnvanterProject {
                 this.columnSube = base.Columns["Sube"];
                 this.columnTarih = base.Columns["Tarih"];
                 this.columnKaydeden = base.Columns["Kaydeden"];
+                this.columnDurum = base.Columns["Durum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -941,6 +953,8 @@ namespace EnvanterProject {
                 base.Columns.Add(this.columnTarih);
                 this.columnKaydeden = new global::System.Data.DataColumn("Kaydeden", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKaydeden);
+                this.columnDurum = new global::System.Data.DataColumn("Durum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDurum);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -958,6 +972,7 @@ namespace EnvanterProject {
                 this.columnKullanici.MaxLength = 100;
                 this.columnSube.MaxLength = 100;
                 this.columnKaydeden.MaxLength = 100;
+                this.columnDurum.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1493,6 +1508,22 @@ namespace EnvanterProject {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Durum {
+                get {
+                    try {
+                        return ((string)(this[this.tableUrunler.DurumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Durum\' in table \'Urunler\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUrunler.DurumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsKategoriNull() {
                 return this.IsNull(this.tableUrunler.KategoriColumn);
             }
@@ -1609,6 +1640,18 @@ namespace EnvanterProject {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetKaydedenNull() {
                 this[this.tableUrunler.KaydedenColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDurumNull() {
+                return this.IsNull(this.tableUrunler.DurumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDurumNull() {
+                this[this.tableUrunler.DurumColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2329,10 +2372,11 @@ SELECT Id, BolgeMudurluk, Sube, YapilacakIs, Durum, IsıYapanPersonel, Kaydeden,
             tableMapping.ColumnMappings.Add("Sube", "Sube");
             tableMapping.ColumnMappings.Add("Tarih", "Tarih");
             tableMapping.ColumnMappings.Add("Kaydeden", "Kaydeden");
+            tableMapping.ColumnMappings.Add("Durum", "Durum");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Urunler] WHERE (([Id] = @Original_Id) AND ((@IsNull_Kategori = 1 AND [Kategori] IS NULL) OR ([Kategori] = @Original_Kategori)) AND ((@IsNull_Marka = 1 AND [Marka] IS NULL) OR ([Marka] = @Original_Marka)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) OR ([Model] = @Original_Model)) AND ((@IsNull_SeriNo = 1 AND [SeriNo] IS NULL) OR ([SeriNo] = @Original_SeriNo)) AND ((@IsNull_Ozellik = 1 AND [Ozellik] IS NULL) OR ([Ozellik] = @Original_Ozellik)) AND ((@IsNull_Kullanici = 1 AND [Kullanici] IS NULL) OR ([Kullanici] = @Original_Kullanici)) AND ((@IsNull_Sube = 1 AND [Sube] IS NULL) OR ([Sube] = @Original_Sube)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_Kaydeden = 1 AND [Kaydeden] IS NULL) OR ([Kaydeden] = @Original_Kaydeden)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Urunler] WHERE (([Id] = @Original_Id) AND ((@IsNull_Kategori = 1 AND [Kategori] IS NULL) OR ([Kategori] = @Original_Kategori)) AND ((@IsNull_Marka = 1 AND [Marka] IS NULL) OR ([Marka] = @Original_Marka)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) OR ([Model] = @Original_Model)) AND ((@IsNull_SeriNo = 1 AND [SeriNo] IS NULL) OR ([SeriNo] = @Original_SeriNo)) AND ((@IsNull_Ozellik = 1 AND [Ozellik] IS NULL) OR ([Ozellik] = @Original_Ozellik)) AND ((@IsNull_Kullanici = 1 AND [Kullanici] IS NULL) OR ([Kullanici] = @Original_Kullanici)) AND ((@IsNull_Sube = 1 AND [Sube] IS NULL) OR ([Sube] = @Original_Sube)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_Kaydeden = 1 AND [Kaydeden] IS NULL) OR ([Kaydeden] = @Original_Kaydeden)) AND ((@IsNull_Durum = 1 AND [Durum] IS NULL) OR ([Durum] = @Original_Durum)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kategori", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kategori", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -2353,10 +2397,12 @@ SELECT Id, BolgeMudurluk, Sube, YapilacakIs, Durum, IsıYapanPersonel, Kaydeden,
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tarih", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kaydeden", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kaydeden", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kaydeden", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kaydeden", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Durum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Urunler] ([Kategori], [Marka], [Model], [SeriNo], [Ozellik], [Aciklama], [Kullanici], [Sube], [Tarih], [Kaydeden]) VALUES (@Kategori, @Marka, @Model, @SeriNo, @Ozellik, @Aciklama, @Kullanici, @Sube, @Tarih, @Kaydeden);
-SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, Tarih, Kaydeden FROM Urunler WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Urunler] ([Kategori], [Marka], [Model], [SeriNo], [Ozellik], [Aciklama], [Kullanici], [Sube], [Tarih], [Kaydeden], [Durum]) VALUES (@Kategori, @Marka, @Model, @SeriNo, @Ozellik, @Aciklama, @Kullanici, @Sube, @Tarih, @Kaydeden, @Durum);
+SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, Tarih, Kaydeden, Durum FROM Urunler WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kategori", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kategori", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2368,10 +2414,11 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sube", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sube", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarih", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kaydeden", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kaydeden", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Urunler] SET [Kategori] = @Kategori, [Marka] = @Marka, [Model] = @Model, [SeriNo] = @SeriNo, [Ozellik] = @Ozellik, [Aciklama] = @Aciklama, [Kullanici] = @Kullanici, [Sube] = @Sube, [Tarih] = @Tarih, [Kaydeden] = @Kaydeden WHERE (([Id] = @Original_Id) AND ((@IsNull_Kategori = 1 AND [Kategori] IS NULL) OR ([Kategori] = @Original_Kategori)) AND ((@IsNull_Marka = 1 AND [Marka] IS NULL) OR ([Marka] = @Original_Marka)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) OR ([Model] = @Original_Model)) AND ((@IsNull_SeriNo = 1 AND [SeriNo] IS NULL) OR ([SeriNo] = @Original_SeriNo)) AND ((@IsNull_Ozellik = 1 AND [Ozellik] IS NULL) OR ([Ozellik] = @Original_Ozellik)) AND ((@IsNull_Kullanici = 1 AND [Kullanici] IS NULL) OR ([Kullanici] = @Original_Kullanici)) AND ((@IsNull_Sube = 1 AND [Sube] IS NULL) OR ([Sube] = @Original_Sube)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_Kaydeden = 1 AND [Kaydeden] IS NULL) OR ([Kaydeden] = @Original_Kaydeden)));
-SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, Tarih, Kaydeden FROM Urunler WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Urunler] SET [Kategori] = @Kategori, [Marka] = @Marka, [Model] = @Model, [SeriNo] = @SeriNo, [Ozellik] = @Ozellik, [Aciklama] = @Aciklama, [Kullanici] = @Kullanici, [Sube] = @Sube, [Tarih] = @Tarih, [Kaydeden] = @Kaydeden, [Durum] = @Durum WHERE (([Id] = @Original_Id) AND ((@IsNull_Kategori = 1 AND [Kategori] IS NULL) OR ([Kategori] = @Original_Kategori)) AND ((@IsNull_Marka = 1 AND [Marka] IS NULL) OR ([Marka] = @Original_Marka)) AND ((@IsNull_Model = 1 AND [Model] IS NULL) OR ([Model] = @Original_Model)) AND ((@IsNull_SeriNo = 1 AND [SeriNo] IS NULL) OR ([SeriNo] = @Original_SeriNo)) AND ((@IsNull_Ozellik = 1 AND [Ozellik] IS NULL) OR ([Ozellik] = @Original_Ozellik)) AND ((@IsNull_Kullanici = 1 AND [Kullanici] IS NULL) OR ([Kullanici] = @Original_Kullanici)) AND ((@IsNull_Sube = 1 AND [Sube] IS NULL) OR ([Sube] = @Original_Sube)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_Kaydeden = 1 AND [Kaydeden] IS NULL) OR ([Kaydeden] = @Original_Kaydeden)) AND ((@IsNull_Durum = 1 AND [Durum] IS NULL) OR ([Durum] = @Original_Durum)));
+SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, Tarih, Kaydeden, Durum FROM Urunler WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kategori", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kategori", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marka", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marka", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2383,6 +2430,7 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sube", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sube", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarih", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Kaydeden", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kaydeden", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kategori", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kategori", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kategori", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kategori", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2402,6 +2450,8 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tarih", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kaydeden", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kaydeden", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kaydeden", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kaydeden", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Durum", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Durum", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -2418,7 +2468,8 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Urunler.*\r\nFROM            Urunler";
+            this._commandCollection[0].CommandText = "SELECT        Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, S" +
+                "ube, Tarih, Kaydeden, Durum\r\nFROM            Urunler";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2479,7 +2530,7 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Kategori, string Original_Marka, string Original_Model, string Original_SeriNo, string Original_Ozellik, string Original_Kullanici, string Original_Sube, global::System.Nullable<global::System.DateTime> Original_Tarih, string Original_Kaydeden) {
+        public virtual int Delete(int Original_Id, string Original_Kategori, string Original_Marka, string Original_Model, string Original_SeriNo, string Original_Ozellik, string Original_Kullanici, string Original_Sube, global::System.Nullable<global::System.DateTime> Original_Tarih, string Original_Kaydeden, string Original_Durum) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Kategori == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -2553,6 +2604,14 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_Kaydeden));
             }
+            if ((Original_Durum == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_Durum));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2573,7 +2632,7 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Kategori, string Marka, string Model, string SeriNo, string Ozellik, string Aciklama, string Kullanici, string Sube, global::System.Nullable<global::System.DateTime> Tarih, string Kaydeden) {
+        public virtual int Insert(string Kategori, string Marka, string Model, string SeriNo, string Ozellik, string Aciklama, string Kullanici, string Sube, global::System.Nullable<global::System.DateTime> Tarih, string Kaydeden, string Durum) {
             if ((Kategori == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -2634,6 +2693,12 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Kaydeden));
             }
+            if ((Durum == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Durum));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2665,6 +2730,7 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
                     string Sube, 
                     global::System.Nullable<global::System.DateTime> Tarih, 
                     string Kaydeden, 
+                    string Durum, 
                     int Original_Id, 
                     string Original_Kategori, 
                     string Original_Marka, 
@@ -2675,6 +2741,7 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
                     string Original_Sube, 
                     global::System.Nullable<global::System.DateTime> Original_Tarih, 
                     string Original_Kaydeden, 
+                    string Original_Durum, 
                     int Id) {
             if ((Kategori == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -2736,80 +2803,94 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Kaydeden));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id));
-            if ((Original_Kategori == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            if ((Durum == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Kategori));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Durum));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id));
+            if ((Original_Kategori == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Kategori));
             }
             if ((Original_Marka == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Marka));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Marka));
             }
             if ((Original_Model == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Model));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Model));
             }
             if ((Original_SeriNo == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_SeriNo));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_SeriNo));
             }
             if ((Original_Ozellik == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Ozellik));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Ozellik));
             }
             if ((Original_Kullanici == null)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Kullanici));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Kullanici));
             }
             if ((Original_Sube == null)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Sube));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_Sube));
             }
             if ((Original_Tarih.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_Tarih.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_Tarih.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_Kaydeden == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_Kaydeden));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_Kaydeden));
             }
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Id));
+            if ((Original_Durum == null)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_Durum));
+            }
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2841,6 +2922,7 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
                     string Sube, 
                     global::System.Nullable<global::System.DateTime> Tarih, 
                     string Kaydeden, 
+                    string Durum, 
                     int Original_Id, 
                     string Original_Kategori, 
                     string Original_Marka, 
@@ -2850,8 +2932,9 @@ SELECT Id, Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, T
                     string Original_Kullanici, 
                     string Original_Sube, 
                     global::System.Nullable<global::System.DateTime> Original_Tarih, 
-                    string Original_Kaydeden) {
-            return this.Update(Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, Tarih, Kaydeden, Original_Id, Original_Kategori, Original_Marka, Original_Model, Original_SeriNo, Original_Ozellik, Original_Kullanici, Original_Sube, Original_Tarih, Original_Kaydeden, Original_Id);
+                    string Original_Kaydeden, 
+                    string Original_Durum) {
+            return this.Update(Kategori, Marka, Model, SeriNo, Ozellik, Aciklama, Kullanici, Sube, Tarih, Kaydeden, Durum, Original_Id, Original_Kategori, Original_Marka, Original_Model, Original_SeriNo, Original_Ozellik, Original_Kullanici, Original_Sube, Original_Tarih, Original_Kaydeden, Original_Durum, Original_Id);
         }
     }
     

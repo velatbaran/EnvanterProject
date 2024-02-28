@@ -97,5 +97,23 @@ namespace EnvanterProject
         {
             txtKategoriEkle.Text = listKategori.Text;
         }
+
+        private void fKategoriEkle_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                dynamic result = MessageBox.Show("Çıkmak istiyor musunuz?", "Kategori Ekleme Sayfası", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                    KategoriDoldur();
+                }
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 }

@@ -113,6 +113,16 @@ namespace EnvanterProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defaultimage {
+            get {
+                object obj = ResourceManager.GetObject("defaultimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dsi {
             get {
                 object obj = ResourceManager.GetObject("dsi", resourceCulture);
@@ -136,6 +146,16 @@ namespace EnvanterProject.Properties {
         internal static System.Drawing.Bitmap Ekle24 {
             get {
                 object obj = ResourceManager.GetObject("Ekle24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Excel32 {
+            get {
+                object obj = ResourceManager.GetObject("Excel32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
